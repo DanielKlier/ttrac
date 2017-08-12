@@ -8,15 +8,15 @@ import './app.css';
 
 export default () => (
     <div className="page">
-        <header className="header">
-            <Navigation/>
-        </header>
+      <header className="header">
+        <Navigation/>
+      </header>
 
-        <main className="main">
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/about-us" component={About}/>
-        </main>
+      <main className="main">
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/about-us" component={About}/>
+      </main>
 
-        <Footer className="footer"/>
+      <Footer className="footer"/>
     </div>
 );

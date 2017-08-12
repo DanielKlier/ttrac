@@ -9,15 +9,15 @@ export const history = createBrowserHistory();
 const initialState = {};
 const enhancers    = [];
 const middleware   = [
-    thunk,
-    routerMiddleware(history)
+  thunk,
+  routerMiddleware(history),
 ];
 
 // Add redux devtools if environment is development
 if (process.env.NODE_ENV === 'development') {
-    const devToolsExtension = window.devToolsExtension;
+  const devToolsExtension = window.devToolsExtension;
 
-    devToolsExtension && enhancers.push(devToolsExtension());
+  devToolsExtension && enhancers.push(devToolsExtension());
 }
 
 const composedEnhancers = compose(
@@ -28,7 +28,7 @@ const composedEnhancers = compose(
 const store = createStore(
     rootReducer,
     initialState,
-    composedEnhancers
+    composedEnhancers,
 );
 
 export default store;

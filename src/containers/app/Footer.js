@@ -3,6 +3,6 @@ import IconCredit from './IconCredit';
 
 export default () => (
     <div className="footer">
-        <IconCredit/>
+      <IconCredit/>
     </div>
 );
