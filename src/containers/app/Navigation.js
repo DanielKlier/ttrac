@@ -3,6 +3,7 @@ import {Nav, Navbar, NavItem} from 'react-bootstrap';
 import timeManagementLogo from './time-management.svg';
 import {Link} from 'react-router-dom';
 import './Navigation.css';
+import {LinkContainer} from 'react-router-bootstrap';
 
 export default props => (
     <Navbar inverse collapseOnSelect>
@@ -17,8 +18,12 @@ export default props => (
       </Navbar.Header>
       <Navbar.Collapse>
         <Nav>
-          <NavItem eventKey={1} href="/">Home</NavItem>
-          <NavItem eventKey={2} href="/about-us">About</NavItem>
+          <LinkContainer to="/" exact>
+            <NavItem eventKey={1}>Home</NavItem>
+          </LinkContainer>
+          <LinkContainer to="/about-us" exact>
+            <NavItem eventKey={2}>About</NavItem>
+          </LinkContainer>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
