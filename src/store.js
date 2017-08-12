@@ -3,10 +3,11 @@ import thunk from 'redux-thunk';
 import {routerMiddleware} from 'react-router-redux';
 import {applyMiddleware, compose, createStore} from 'redux';
 import rootReducer from './modules';
+import {loadState, saveState} from './localStorage';
 
 export const history = createBrowserHistory();
 
-const initialState = {};
+const initialState = loadState();
 const enhancers    = [];
 const middleware   = [
   thunk,
@@ -30,5 +31,9 @@ const store = createStore(
     initialState,
     composedEnhancers,
 );
+
+store.subscribe(() => {
+  saveState(store.getState());
+});
 
 export default store;
