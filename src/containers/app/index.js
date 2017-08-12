@@ -1,18 +1,22 @@
 import React from 'react';
-import {Link, Route} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import Home from '../home';
 import About from '../about';
+import Footer from './Footer';
+import Navigation from './Navigation';
+import './app.css';
 
 export default () => (
-    <div>
-        <header>
-            <Link to="/">Home</Link>
-            <Link to="/about-us">About</Link>
+    <div className="page">
+        <header className="header">
+            <Navigation/>
         </header>
 
-        <main>
+        <main className="main">
             <Route exact path="/" component={Home}/>
             <Route exact path="/about-us" component={About}/>
         </main>
+
+        <Footer className="footer"/>
     </div>
 );
