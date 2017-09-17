@@ -2,7 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import ToggleDisplay from '../../components/ToggleDisplay';
 
-export default class TaskListShortDescription extends React.Component {
+export default class TaskListTitle extends React.Component {
     // noinspection JSUnusedGlobalSymbols
     static propTypes = {
         title        : PropTypes.string,
