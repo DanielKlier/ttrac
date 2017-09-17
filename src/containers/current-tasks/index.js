@@ -5,7 +5,7 @@ import TaskListItem from './TaskListItem';
 import './task-list.css';
 import AddNewTaskItem from './AddNewTaskItem';
 
-const Home = props => (
+const CurrentTasks = props => (
     <div>
       <h1>Time Tracking</h1>
       <ListGroup componentClass="ul">
@@ -21,4 +21,4 @@ const Home = props => (
 export default connect(
     null,
     null,
-)(Home);
+)(CurrentTasks);

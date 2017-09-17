@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route} from 'react-router-dom';
-import Home from '../home';
+import CurrentTasks from '../current-tasks';
 import About from '../about';
 import Footer from './Footer';
 import Navigation from './Navigation';
@@ -13,7 +13,7 @@ export default () => (
       </header>
 
       <main className="main">
-        <Route exact path="/" component={Home}/>
+        <Route exact path="/" component={CurrentTasks}/>
         <Route exact path="/about-us" component={About}/>
       </main>
 
