@@ -39,7 +39,14 @@ const CurrentTasks = props => (
 );
 
 const mapStateToProps = ({tasks}) => ({
-    currentTasks: tasks.currentTasks.map((id) => tasks.byId[id]),
+    currentTasks: tasks.currentTasks.map((id) => ({
+        ...tasks.byId[id],
+        elapsedTime: (tasks.byId[id].timeLogs || []).reduce(
+            (t, tl) => {
+                tl = tasks.timeLogs.byId[tl];
+                return t + tl.stopTime - tl.startTime;
+            }, 0)
+    })),
     runningTask : tasks.runningTask
 });
 

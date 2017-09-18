@@ -7,7 +7,8 @@ import TaskListTitle from './TaskListTitle';
 export default props => (
     <li className="list-group-item task-list-item">
         <div className="task-list-item-badges">
-            <TaskListHours hours={props.elapsedTime} className="pull-left"/>
+            <TaskListHours elapsedTime={props.elapsedTime}
+                           className="pull-left"/>
             {props.jiraIssue && <TaskListIssue jiraIssue={props.jiraIssue}/>}
         </div>
         <div className="task-list-item-main">
