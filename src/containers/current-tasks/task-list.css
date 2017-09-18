@@ -1,5 +1,18 @@
+@keyframes pulsating-border {
+    from {
+        box-shadow: 0 0 5px rgba(255, 0, 2, 1) inset;
+    }
+    to {
+        box-shadow: 0 0 0 rgba(255, 0, 2, 0) inset;
+    }
+}
+
 .task-list-item {
     display: flex;
+}
+
+.task-list-item.running {
+    animation: 1s ease infinite alternate pulsating-border;
 }
 
 .task-list-hours {
