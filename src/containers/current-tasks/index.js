@@ -4,7 +4,12 @@ import {ListGroup} from 'react-bootstrap';
 import TaskListItem from './TaskListItem';
 import './task-list.css';
 import AddNewTaskItem from './AddNewTaskItem';
-import {createNewCurrentTask, setTaskTitle} from '../../actions/currentTasks';
+import {
+    createNewCurrentTask,
+    setTaskTitle,
+    startTaskProgress,
+    stopTaskProgress
+} from '../../actions/currentTasks';
 
 const CurrentTasks = props => (
     <div>
@@ -12,9 +17,19 @@ const CurrentTasks = props => (
         <ListGroup componentClass="ul">
             {
                 props.currentTasks.map(t => (
-                    <TaskListItem {...t} onTaskTitleChanged={
-                        title => props.onTaskTitleChanged(
-                            t.uuid, title)} key={t.uuid}/>
+                    <TaskListItem {...t}
+                                  key={t.uuid}
+                                  taskIsRunning={t.uuid === props.runningTask}
+                                  onTaskTitleChanged={title =>
+                                      props.onTaskTitleChanged(t.uuid, title)
+                                  }
+                                  onStartProgressClicked={() =>
+                                      props.onStartProgressClicked(t.uuid)
+                                  }
+                                  onStopProgressClicked={() =>
+                                      props.onStopProgressClicked(t.uuid)
+                                  }
+                    />
                 ))
             }
             <AddNewTaskItem
@@ -24,22 +39,17 @@ const CurrentTasks = props => (
 );
 
 const mapStateToProps = ({tasks}) => ({
-    currentTasks: tasks.currentTasks.map((id) => tasks.byId[id])
+    currentTasks: tasks.currentTasks.map((id) => tasks.byId[id]),
+    runningTask : tasks.runningTask
 });
 
 const mapDispatchToProps = dispatch => ({
-    onAddNewTaskClick : () => dispatch(createNewCurrentTask()),
-    onTaskTitleChanged: (taskId, text) => dispatch(setTaskTitle(taskId, text))
+    onAddNewTaskClick     : () => dispatch(createNewCurrentTask()),
+    onTaskTitleChanged    : (taskId, text) => dispatch(
+        setTaskTitle(taskId, text)),
+    onStartProgressClicked: (taskId) => dispatch(startTaskProgress(taskId)),
+    onStopProgressClicked : (taskId) => dispatch(stopTaskProgress(taskId))
 });
-
-/*
-<TaskListItem elapsedTime={4800000} jiraIssue="BFI-212"
-                          title="Fehlersuche"
-                          onTaskTitleChanged={title => props.onTaskTitleChanged(
-                              1,
-                              title
-                          )}/>
- */
 
 export default connect(
     mapStateToProps,

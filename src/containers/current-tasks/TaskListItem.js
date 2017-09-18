@@ -17,9 +17,16 @@ export default props => (
                            }/>
         </div>
         <div className="task-list-item-buttons">
-            <Button>
+            {props.taskIsRunning === false &&
+            <Button onClick={() => props.onStartProgressClicked()}>
                 <Glyphicon glyph="time"/>
             </Button>
+            }
+            {props.taskIsRunning === true &&
+            <Button onClick={() => props.onStopProgressClicked()}>
+                <Glyphicon glyph="pause"/>
+            </Button>
+            }
         </div>
     </li>
 );
