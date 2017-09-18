@@ -10,7 +10,7 @@ export default props => (
 
               moment.duration(props.elapsedTime).format(
                   (props.elapsedTime > 60 * 60 * 1000) ?
-                  'h[h] mm[m]' : 'm[m] ss[s]'
+                  'h[h] m[m]' : 'm[m] s[s]'
               )
           }
       </Label>
