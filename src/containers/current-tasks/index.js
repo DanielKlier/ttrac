@@ -5,11 +5,11 @@ import TaskListItem from './TaskListItem';
 import './task-list.css';
 import AddNewTaskItem from './AddNewTaskItem';
 import {
-    createNewCurrentTask,
+    createNewTask,
     setTaskTitle,
     startTaskProgress,
     stopTaskProgress
-} from '../../actions/currentTasks';
+} from '../../actions/';
 
 const CurrentTasks = props => (
     <div>
@@ -18,16 +18,22 @@ const CurrentTasks = props => (
             {
                 props.currentTasks.map(t => (
                     <TaskListItem {...t}
-                                  key={t.uuid}
-                                  taskIsRunning={t.uuid === props.runningTask}
+                                  key={t.id}
+                                  taskIsRunning={
+                                      !!props.runningTask &&
+                                      t.id === props.runningTask.taskId
+                                  }
                                   onTaskTitleChanged={title =>
-                                      props.onTaskTitleChanged(t.uuid, title)
+                                      props.onTaskTitleChanged(t.id, title)
                                   }
                                   onStartProgressClicked={() =>
-                                      props.onStartProgressClicked(t.uuid)
+                                      props.onStartProgressClicked(t.id)
                                   }
                                   onStopProgressClicked={() =>
-                                      props.onStopProgressClicked(t.uuid)
+                                      props.runningTask &&
+                                      props.onStopProgressClicked(
+                                          t.id, props.runningTask.startDate
+                                      )
                                   }
                     />
                 ))
@@ -38,24 +44,30 @@ const CurrentTasks = props => (
     </div>
 );
 
-const mapStateToProps = ({tasks}) => ({
-    currentTasks: tasks.currentTasks.map((id) => ({
-        ...tasks.byId[id],
-        elapsedTime: (tasks.byId[id].timeLogs || []).reduce(
-            (t, tl) => {
-                tl = tasks.timeLogs.byId[tl];
-                return t + tl.stopTime - tl.startTime;
-            }, 0)
-    })),
-    runningTask : tasks.runningTask
+const mapStateToProps = ({app}) => ({
+    currentTasks: app.tasks.allIds.map((id) => {
+
+        const task        = app.tasks.byId[id];
+        const elapsedTime = (app.timeLogs.byTaskId[id] || [])
+            .map(logId => app.timeLogs.byId[logId])
+            .reduce((time, log) => time + log.stopDate - log.startDate, 0);
+
+        return {
+            ...task,
+            elapsedTime
+        };
+    }),
+    runningTask : app.runningTask
 });
 
 const mapDispatchToProps = dispatch => ({
-    onAddNewTaskClick     : () => dispatch(createNewCurrentTask()),
+    onAddNewTaskClick     : () => dispatch(createNewTask()),
     onTaskTitleChanged    : (taskId, text) => dispatch(
         setTaskTitle(taskId, text)),
     onStartProgressClicked: (taskId) => dispatch(startTaskProgress(taskId)),
-    onStopProgressClicked : (taskId) => dispatch(stopTaskProgress(taskId))
+    onStopProgressClicked : (taskId, startDate) => dispatch(
+        stopTaskProgress(taskId, startDate)
+    )
 });
 
 export default connect(
