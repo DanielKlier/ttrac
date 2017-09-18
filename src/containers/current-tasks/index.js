@@ -23,6 +23,7 @@ const CurrentTasks = props => (
                                       !!props.runningTask &&
                                       t.id === props.runningTask.taskId
                                   }
+                                  runningTask={props.runningTask}
                                   onTaskTitleChanged={title =>
                                       props.onTaskTitleChanged(t.id, title)
                                   }
