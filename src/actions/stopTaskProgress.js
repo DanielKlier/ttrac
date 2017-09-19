@@ -1,4 +1,4 @@
-import {STOP_TASK_PROGRESS} from '../actions';
+import {STOP_TASK_PROGRESS} from './actionTypes';
 import uuid from 'uuid';
 
 export default function(taskId, startDate) {

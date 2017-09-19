@@ -1,4 +1,4 @@
-import {SET_TASK_TITLE} from '../actions';
+import {SET_TASK_TITLE} from './actionTypes';
 
 export default function(taskId, title) {
     return {

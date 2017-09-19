@@ -1,4 +1,4 @@
-import {START_TASK_PROGRESS} from '../actions';
+import {START_TASK_PROGRESS} from './actionTypes';
 import {stopTaskProgress} from './index';
 
 export default function(taskId) {

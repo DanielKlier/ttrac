@@ -1,4 +1,4 @@
-import {CREATE_NEW_CURRENT_TASK} from '../actions';
+import {CREATE_NEW_CURRENT_TASK} from './actionTypes';
 import uuid from 'uuid';
 
 export default function() {
