@@ -30,7 +30,7 @@ export default class TimeCounter extends React.Component {
     render() {
         return (
             <span className="task-list-hours">
-                <Label bsStyle="info">
+                <Label bsStyle="warning">
                     {
                         moment.duration(this.state.elapsedTime).format(
                             (this.state.elapsedTime > 60 * 60 * 1000)
