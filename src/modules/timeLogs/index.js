@@ -1,6 +1,7 @@
 import {DELETE_TIMELOGS, STOP_TASK_PROGRESS} from '../../actions';
 import {combineReducers} from 'redux';
 import omit from 'lodash/omit';
+import omitBy from 'lodash/omitBy';
 import mapValues from 'lodash/mapValues';
 import difference from 'lodash/difference';
 
@@ -23,7 +24,7 @@ function addTimeLogEntry(state, action) {
 
 function deleteTimeLogs(state, action) {
     const {payload}    = action;
-    const {timeLogIds} = {payload};
+    const {timeLogIds} = payload;
 
     return omit(state, timeLogIds);
 }
@@ -58,9 +59,11 @@ function deleteFromTimeLogsByTaskId(state, action) {
     const {payload}    = action;
     const {timeLogIds} = payload;
 
-    return mapValues(
+    const withIdsRemoved = mapValues(
         state, currentLogIds => difference(currentLogIds, timeLogIds)
     );
+
+    return omitBy(withIdsRemoved, logIds => logIds.length === 0);
 }
 
 function timeLogsByTaskId(state = {}, action) {
