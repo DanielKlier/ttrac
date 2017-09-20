@@ -22,3 +22,6 @@ yarn-error.log*
 
 # JetBrains files
 .idea
+
+# Jest component snapshots
+**/__tests__/__snapshots__/
