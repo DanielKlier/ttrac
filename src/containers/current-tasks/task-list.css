@@ -46,6 +46,10 @@
     flex-shrink: 0;
 }
 
+.task-list-item-buttons .btn {
+    margin-left: 5px;
+}
+
 .add-new-task-text {
     line-height: 34px;
 }

@@ -6,6 +6,7 @@ import './task-list.css';
 import AddNewTaskItem from './AddNewTaskItem';
 import {
     createNewTask,
+    deleteTask,
     setTaskTitle,
     startTaskProgress,
     stopTaskProgress
@@ -35,6 +36,9 @@ const CurrentTasks = props => (
                                       props.onStopProgressClicked(
                                           t.id, props.runningTask.startDate
                                       )
+                                  }
+                                  onDeleteTaskClicked={() =>
+                                      props.onDeleteTaskClicked(t.id)
                                   }
                     />
                 ))
@@ -68,7 +72,8 @@ const mapDispatchToProps = dispatch => ({
     onStartProgressClicked: (taskId) => dispatch(startTaskProgress(taskId)),
     onStopProgressClicked : (taskId, startDate) => dispatch(
         stopTaskProgress(taskId, startDate)
-    )
+    ),
+    onDeleteTaskClicked   : (taskId) => dispatch(deleteTask(taskId))
 });
 
 export default connect(

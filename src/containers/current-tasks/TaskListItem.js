@@ -16,7 +16,8 @@ class TaskListItem extends React.PureComponent {
         runningTask           : PropTypes.object,
         onTaskTitleChanged    : PropTypes.func.isRequired,
         onStartProgressClicked: PropTypes.func.isRequired,
-        onStopProgressClicked : PropTypes.func.isRequired
+        onStopProgressClicked : PropTypes.func.isRequired,
+        onDeleteTaskClicked   : PropTypes.func.isRequired
     };
 
     render() {
@@ -50,6 +51,9 @@ class TaskListItem extends React.PureComponent {
                                    }/>
                 </div>
                 <div className="task-list-item-buttons">
+                    <Button onClick={() => props.onDeleteTaskClicked()}>
+                        <Glyphicon glyph="trash"/>
+                    </Button>
                     {props.taskIsRunning === false &&
                     <Button onClick={() => props.onStartProgressClicked()}>
                         <Glyphicon glyph="time"/>
