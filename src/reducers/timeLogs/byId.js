@@ -1,15 +1,16 @@
 import {DELETE_TIMELOGS, STOP_TASK_PROGRESS} from '../../actions';
-import {omit} from 'lodash';
+import {mapValues, pick} from 'lodash';
 
 function addTimeLogEntry(state, action) {
     const {payload}                                = action;
     const {timeLogId, taskId, startDate, stopDate} = payload;
 
     const timeLog = {
-        id: timeLogId,
+        id      : timeLogId,
         startDate,
         stopDate,
-        taskId
+        taskId,
+        deletion: {isDeleted: false, timestamp: null}
     };
 
     return {
@@ -19,10 +20,21 @@ function addTimeLogEntry(state, action) {
 }
 
 function deleteTimeLogs(state, action) {
-    const {payload}    = action;
-    const {timeLogIds} = payload;
+    const {payload}               = action;
+    const {timeLogIds, timestamp} = payload;
 
-    return omit(state, timeLogIds);
+    const deletedLogs = mapValues(
+        pick(state, timeLogIds),
+        log => ({
+            ...log,
+            deletion: {isDeleted: true, timestamp}
+        })
+    );
+
+    return {
+        ...state,
+        ...deletedLogs
+    };
 }
 
 export default function(state = {}, action) {

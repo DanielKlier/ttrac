@@ -2,7 +2,7 @@ import {createBrowserHistory} from 'history';
 import thunk from 'redux-thunk';
 import {routerMiddleware} from 'react-router-redux';
 import {applyMiddleware, compose, createStore} from 'redux';
-import rootReducer from './modules';
+import rootReducer from './reducers';
 import {loadState, saveState} from './localStorage';
 
 export const history = createBrowserHistory();
