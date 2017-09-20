@@ -21,7 +21,7 @@ function deleteFromTimeLogsByTaskId(state, action) {
     return omitBy(withIdsRemoved, logIds => logIds.length === 0);
 }
 
-function timeLogsByTaskId(state = {}, action) {
+export default function(state = {}, action) {
     switch (action.type) {
         case STOP_TASK_PROGRESS:
             return addTimeLogByTaskId(state, action);
@@ -31,5 +31,3 @@ function timeLogsByTaskId(state = {}, action) {
             return state;
     }
 }
-
-export default timeLogsByTaskId;

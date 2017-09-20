@@ -14,7 +14,7 @@ function deleteTimeLogIds(state, action) {
     return difference(state, timeLogIds);
 }
 
-function allTimeLogs(state = [], action) {
+export default function(state = [], action) {
     switch (action.type) {
         case STOP_TASK_PROGRESS:
             return addTimeLogId(state, action);
@@ -24,5 +24,3 @@ function allTimeLogs(state = [], action) {
             return state;
     }
 }
-
-export default allTimeLogs;

@@ -25,7 +25,7 @@ function deleteTimeLogs(state, action) {
     return omit(state, timeLogIds);
 }
 
-function timeLogsById(state = {}, action) {
+export default function(state = {}, action) {
     switch (action.type) {
         case STOP_TASK_PROGRESS:
             return addTimeLogEntry(state, action);
@@ -35,5 +35,3 @@ function timeLogsById(state = {}, action) {
             return state;
     }
 }
-
-export default timeLogsById;
