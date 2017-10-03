@@ -29,12 +29,13 @@ export default class TaskListTitle extends React.Component {
         return (
             <h4 className="task-list-description">
                 <ToggleDisplay show={!this.state.isEditing && this.state.text}>
-                    <span onClick={() => this.showEditInput()}>
+                    <span className="title" onClick={() => this.showEditInput()}>
                         {this.state.text}
                     </span>
                 </ToggleDisplay>
                 <ToggleDisplay show={this.state.isEditing || !this.state.text}>
                     <input type="text"
+                           className="title-input"
                            ref={el => {this.titleInput = el;}}
                            value={this.state.text}
                            onBlur={(e) => this.stopEditing(e.target.value)}
