@@ -872,7 +872,7 @@ babel-preset-jest@^20.0.3:
   dependencies:
     babel-plugin-jest-hoist "^20.0.3"
 
-babel-preset-react-app@^3.0.3:
+babel-preset-react-app@^3.0.2:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/babel-preset-react-app/-/babel-preset-react-app-3.0.3.tgz#5716d6a8c7354db0cc2707207ab6ceb3b2e0a825"
   dependencies:
@@ -912,12 +912,12 @@ babel-register@^6.24.1:
     mkdirp "^0.5.1"
     source-map-support "^0.4.2"
 
-babel-runtime@6.26.0:
-  version "6.26.0"
-  resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
+babel-runtime@6.23.0:
+  version "6.23.0"
+  resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.23.0.tgz#0a9489f144de70efb3ce4300accdb329e2fc543b"
   dependencies:
     core-js "^2.4.0"
-    regenerator-runtime "^0.11.0"
+    regenerator-runtime "^0.10.0"
 
 babel-runtime@^6.11.6, babel-runtime@^6.18.0, babel-runtime@^6.22.0:
   version "6.25.0"
@@ -1576,6 +1576,14 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+create-react-class@^15.6.0:
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.2.tgz#cf1ed15f12aad7f14ef5f2dfe05e6c42f91ef02a"
+  dependencies:
+    fbjs "^0.8.9"
+    loose-envify "^1.3.1"
+    object-assign "^4.1.1"
+
 cross-spawn@5.1.0, cross-spawn@^5.0.1, cross-spawn@^5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
@@ -1754,13 +1762,6 @@ deep-extend@~0.4.0:
 deep-is@~0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/deep-is/-/deep-is-0.1.3.tgz#b369d6fb5dbc13eecf524f91b070feedc357cf34"
-
-default-gateway@^2.2.2:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/default-gateway/-/default-gateway-2.6.0.tgz#acf02d181caef4c464b6c37fe25daacd6189b903"
-  dependencies:
-    execa "^0.8.0"
-    ip-regex "^2.1.0"
 
 default-require-extensions@^1.0.0:
   version "1.0.0"
@@ -2037,9 +2038,9 @@ entities@^1.1.1, entities@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/entities/-/entities-1.1.1.tgz#6e5c2d0a5621b5dadaecef80b90edfb5cd7772f0"
 
-enzyme-adapter-react-16@^1.0.1:
+enzyme-adapter-react-15@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/enzyme-adapter-react-16/-/enzyme-adapter-react-16-1.0.1.tgz#066cb1735e65d8d95841a023f94dab3ce6109e17"
+  resolved "https://registry.yarnpkg.com/enzyme-adapter-react-15/-/enzyme-adapter-react-15-1.0.1.tgz#c1a3e5966bf1c7221c40aa0f877850175035406f"
   dependencies:
     enzyme-adapter-utils "^1.0.0"
     lodash "^4.17.4"
@@ -2056,8 +2057,8 @@ enzyme-adapter-utils@^1.0.0:
     prop-types "^15.5.10"
 
 enzyme-to-json@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/enzyme-to-json/-/enzyme-to-json-3.1.0.tgz#1941eded2f3a64f12f3aff6356878af9515a7088"
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/enzyme-to-json/-/enzyme-to-json-3.1.1.tgz#b161b4ef34f12d9e25af8e24f2a0cab68fb2fb54"
   dependencies:
     lodash "^4.17.4"
 
@@ -2200,7 +2201,7 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-react-app@^2.0.1:
+eslint-config-react-app@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/eslint-config-react-app/-/eslint-config-react-app-2.0.1.tgz#fd0503da01ae608f0c6ae8861de084975142230e"
 
@@ -2397,18 +2398,6 @@ exec-sh@^0.2.0:
 execa@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/execa/-/execa-0.7.0.tgz#944becd34cc41ee32a63a9faf27ad5a65fc59777"
-  dependencies:
-    cross-spawn "^5.0.1"
-    get-stream "^3.0.0"
-    is-stream "^1.1.0"
-    npm-run-path "^2.0.0"
-    p-finally "^1.0.0"
-    signal-exit "^3.0.0"
-    strip-eof "^1.0.0"
-
-execa@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/execa/-/execa-0.8.0.tgz#d8d76bbc1b55217ed190fd6dd49d3c774ecfc8da"
   dependencies:
     cross-spawn "^5.0.1"
     get-stream "^3.0.0"
@@ -3227,12 +3216,11 @@ inquirer@3.2.1, inquirer@^3.0.6:
     strip-ansi "^4.0.0"
     through "^2.3.6"
 
-internal-ip@^2.0.2:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/internal-ip/-/internal-ip-2.0.3.tgz#ed3cf9b671ac7ff23037bfacad42eb439cd9546c"
+internal-ip@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/internal-ip/-/internal-ip-1.2.0.tgz#ae9fbf93b984878785d50a8de1b356956058cf5c"
   dependencies:
-    default-gateway "^2.2.2"
-    ipaddr.js "^1.5.2"
+    meow "^3.3.0"
 
 interpret@^1.0.0:
   version "1.0.3"
@@ -3248,10 +3236,6 @@ invert-kv@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
 
-ip-regex@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/ip-regex/-/ip-regex-2.1.0.tgz#fa78bf5d2e6913c911ce9f819ee5146bb6d844e9"
-
 ip@^1.1.0, ip@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/ip/-/ip-1.1.5.tgz#bdded70114290828c0a039e72ef25f5aaec4354a"
@@ -3259,10 +3243,6 @@ ip@^1.1.0, ip@^1.1.5:
 ipaddr.js@1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.4.0.tgz#296aca878a821816e5b85d0a285a99bcff4582f0"
-
-ipaddr.js@^1.5.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.5.2.tgz#d4b505bde9946987ccf0fc58d9010ff9607e3fa0"
 
 is-absolute-url@^2.0.0:
   version "2.1.0"
@@ -4123,7 +4103,7 @@ memory-fs@^0.4.0, memory-fs@~0.4.1:
     errno "^0.1.3"
     readable-stream "^2.0.1"
 
-meow@^3.7.0:
+meow@^3.3.0, meow@^3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/meow/-/meow-3.7.0.tgz#72cb668b425228290abbfa856892587308a801fb"
   dependencies:
@@ -4524,7 +4504,14 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
-opn@5.1.0, opn@^5.1.0:
+opn@4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/opn/-/opn-4.0.2.tgz#7abc22e644dff63b0a96d5ab7f2790c0f01abc95"
+  dependencies:
+    object-assign "^4.0.1"
+    pinkie-promise "^2.0.0"
+
+opn@5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/opn/-/opn-5.1.0.tgz#72ce2306a17dbea58ff1041853352b4a8fc77519"
   dependencies:
@@ -5133,7 +5120,7 @@ prop-types-extra@^1.0.1:
   dependencies:
     warning "^3.0.0"
 
-prop-types@^15.5.10, prop-types@^15.6.0:
+prop-types@^15.5.10:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -5275,11 +5262,12 @@ react-bootstrap@^0.31.2:
     uncontrollable "^4.1.0"
     warning "^3.0.0"
 
-react-dev-utils@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-4.1.0.tgz#f6f436febd3f4eeb538490319b51c875c1e35bc5"
+react-dev-utils@^3.1.0:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-3.1.1.tgz#09ae7209a81384248db56547e718e65bd3b20eb5"
   dependencies:
     address "1.0.2"
+    anser "1.4.1"
     babel-code-frame "6.22.0"
     chalk "1.1.3"
     cross-spawn "5.1.0"
@@ -5288,35 +5276,33 @@ react-dev-utils@^4.1.0:
     filesize "3.5.10"
     global-modules "1.0.0"
     gzip-size "3.0.0"
+    html-entities "1.2.1"
     inquirer "3.2.1"
     is-root "1.0.0"
     opn "5.1.0"
-    react-error-overlay "^2.0.2"
     recursive-readdir "2.2.1"
     shell-quote "1.6.1"
     sockjs-client "1.1.4"
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
-"react-dom@^15 || ^16", react-dom@^16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.0.0.tgz#9cc3079c3dcd70d4c6e01b84aab2a7e34c303f58"
+react-dom@^15.6.1:
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.2.tgz#41cfadf693b757faf2708443a1d1fd5a02bef730"
   dependencies:
-    fbjs "^0.8.16"
+    fbjs "^0.8.9"
     loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.0"
+    object-assign "^4.1.0"
+    prop-types "^15.5.10"
 
-react-error-overlay@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-2.0.2.tgz#967b091962b17f5aeb4a60b1311b1736e1b6533d"
+react-error-overlay@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-1.0.10.tgz#da8cd1eafac41afdca2a33792b23694ef6c528f1"
   dependencies:
     anser "1.4.1"
     babel-code-frame "6.22.0"
-    babel-runtime "6.26.0"
-    html-entities "1.2.1"
-    react "^15 || ^16"
-    react-dom "^15 || ^16"
+    babel-runtime "6.23.0"
+    react-dev-utils "^3.1.0"
     settle-promise "1.0.0"
     source-map "0.5.6"
 
@@ -5353,7 +5339,7 @@ react-router-bootstrap@^0.24.2:
   dependencies:
     prop-types "^15.5.10"
 
-react-router-dom@4.2.2:
+react-router-dom@^4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.2.2.tgz#c8a81df3adc58bba8a76782e946cbd4eae649b8d"
   dependencies:
@@ -5372,18 +5358,6 @@ react-router-redux@next:
     prop-types "^15.5.4"
     react-router "^4.1.1"
 
-react-router@4.2.0, react-router@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.2.0.tgz#61f7b3e3770daeb24062dae3eedef1b054155986"
-  dependencies:
-    history "^4.7.2"
-    hoist-non-react-statics "^2.3.0"
-    invariant "^2.2.2"
-    loose-envify "^1.3.1"
-    path-to-regexp "^1.7.0"
-    prop-types "^15.5.4"
-    warning "^3.0.0"
-
 react-router@^4.1.1:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.1.2.tgz#7ae027341abc42eb08ad9f7a8cac08d0563672ce"
@@ -5396,23 +5370,35 @@ react-router@^4.1.1:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
-react-scripts@1.0.14:
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-1.0.14.tgz#70fe76c9beb67b136b953e875bdfe4ad78d410d1"
+react-router@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.2.0.tgz#61f7b3e3770daeb24062dae3eedef1b054155986"
+  dependencies:
+    history "^4.7.2"
+    hoist-non-react-statics "^2.3.0"
+    invariant "^2.2.2"
+    loose-envify "^1.3.1"
+    path-to-regexp "^1.7.0"
+    prop-types "^15.5.4"
+    warning "^3.0.0"
+
+react-scripts@1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-1.0.11.tgz#483d49e27f417ec981ae415a4456120a2a2bc8c1"
   dependencies:
     autoprefixer "7.1.2"
     babel-core "6.25.0"
     babel-eslint "7.2.3"
     babel-jest "20.0.3"
     babel-loader "7.1.1"
-    babel-preset-react-app "^3.0.3"
-    babel-runtime "6.26.0"
+    babel-preset-react-app "^3.0.2"
+    babel-runtime "6.23.0"
     case-sensitive-paths-webpack-plugin "2.1.1"
     chalk "1.1.3"
     css-loader "0.28.4"
     dotenv "4.0.0"
     eslint "4.4.1"
-    eslint-config-react-app "^2.0.1"
+    eslint-config-react-app "^2.0.0"
     eslint-loader "1.9.0"
     eslint-plugin-flowtype "2.35.0"
     eslint-plugin-import "2.7.0"
@@ -5427,32 +5413,34 @@ react-scripts@1.0.14:
     postcss-flexbugs-fixes "3.2.0"
     postcss-loader "2.0.6"
     promise "8.0.1"
-    react-dev-utils "^4.1.0"
+    react-dev-utils "^3.1.0"
+    react-error-overlay "^1.0.10"
     style-loader "0.18.2"
     sw-precache-webpack-plugin "0.11.4"
     url-loader "0.5.9"
     webpack "3.5.1"
-    webpack-dev-server "2.8.2"
+    webpack-dev-server "2.7.1"
     webpack-manifest-plugin "1.2.1"
     whatwg-fetch "2.0.3"
   optionalDependencies:
     fsevents "1.1.2"
 
-react-test-renderer@16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.0.0.tgz#9fe7b8308f2f71f29fc356d4102086f131c9cb15"
+react-test-renderer@^15.6.2:
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-15.6.2.tgz#d0333434fc2c438092696ca770da5ed48037efa8"
   dependencies:
-    fbjs "^0.8.16"
-    object-assign "^4.1.1"
+    fbjs "^0.8.9"
+    object-assign "^4.1.0"
 
-"react@^15 || ^16", react@^16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.0.0.tgz#ce7df8f1941b036f02b2cca9dbd0cb1f0e855e2d"
+react@^15.6.1:
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-15.6.2.tgz#dba0434ab439cfe82f108f0f511663908179aa72"
   dependencies:
-    fbjs "^0.8.16"
+    create-react-class "^15.6.0"
+    fbjs "^0.8.9"
     loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.0"
+    object-assign "^4.1.0"
+    prop-types "^15.5.10"
 
 read-all-stream@^3.0.0:
   version "3.1.0"
@@ -5568,10 +5556,6 @@ regenerate@^1.2.1:
 regenerator-runtime@^0.10.0:
   version "0.10.5"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
-
-regenerator-runtime@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.0.tgz#7e54fe5b5ccd5d6624ea6255c3473be090b802e1"
 
 regenerator-transform@0.9.11:
   version "0.9.11"
@@ -6167,7 +6151,7 @@ supports-color@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
 
-supports-color@^3.1.2, supports-color@^3.2.3:
+supports-color@^3.1.1, supports-color@^3.1.2, supports-color@^3.2.3:
   version "3.2.3"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-3.2.3.tgz#65ac0504b3954171d8a64946b2ae3cbb8a5f54f6"
   dependencies:
@@ -6623,12 +6607,11 @@ webpack-dev-middleware@^1.11.0:
     range-parser "^1.0.3"
     time-stamp "^2.0.0"
 
-webpack-dev-server@2.8.2:
-  version "2.8.2"
-  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.8.2.tgz#abd61f410778cc4c843d7cebbf41465b1ab7734c"
+webpack-dev-server@2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.7.1.tgz#21580f5a08cd065c71144cf6f61c345bca59a8b8"
   dependencies:
     ansi-html "0.0.7"
-    array-includes "^3.0.3"
     bonjour "^3.5.0"
     chokidar "^1.6.0"
     compression "^1.5.2"
@@ -6637,20 +6620,20 @@ webpack-dev-server@2.8.2:
     express "^4.13.3"
     html-entities "^1.2.0"
     http-proxy-middleware "~0.17.4"
-    internal-ip "^2.0.2"
+    internal-ip "^1.2.0"
     ip "^1.1.5"
     loglevel "^1.4.1"
-    opn "^5.1.0"
+    opn "4.0.2"
     portfinder "^1.0.9"
     selfsigned "^1.9.1"
     serve-index "^1.7.2"
     sockjs "0.3.18"
     sockjs-client "1.1.4"
     spdy "^3.4.1"
-    strip-ansi "^3.0.1"
-    supports-color "^4.2.1"
+    strip-ansi "^3.0.0"
+    supports-color "^3.1.1"
     webpack-dev-middleware "^1.11.0"
-    yargs "^6.6.0"
+    yargs "^6.0.0"
 
 webpack-manifest-plugin@1.2.1:
   version "1.2.1"
@@ -6842,7 +6825,7 @@ yargs-parser@^7.0.0:
   dependencies:
     camelcase "^4.1.0"
 
-yargs@^6.6.0:
+yargs@^6.0.0:
   version "6.6.0"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-6.6.0.tgz#782ec21ef403345f830a808ca3d513af56065208"
   dependencies:
