@@ -81,3 +81,22 @@ it('handles SET_TASK_TITLE', () => {
         deletedIds: []
     });
 });
+
+it('handles ADD_TIME_LOG_TO_TASK', () => {
+    const initialState = {
+        byId      : {
+            '1': {id: '1', timeLogIds: []}
+        },
+        allIds    : ['1'],
+        deletedIds: []
+    };
+
+    expect(reducer(initialState, {
+        type   : 'ADD_TIME_LOG_TO_TASK',
+        payload: {taskId: '1', timeLogId: '1'}
+    })).toEqual({
+        ...initialState, byId: {
+            '1': {id: '1', timeLogIds: ['1']}
+        }
+    });
+});

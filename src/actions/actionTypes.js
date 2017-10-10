@@ -4,3 +4,4 @@ export const START_TASK_PROGRESS     = 'START_TASK_PROGRESS';
 export const STOP_TASK_PROGRESS      = 'STOP_TASK_PROGRESS';
 export const DELETE_TASK             = 'DELETE_TASK';
 export const DELETE_TIMELOGS         = 'DELETE_TIMELOGS';
+export const ADD_TIME_LOG_TO_TASK    = 'ADD_TIME_LOG_TO_TASK';

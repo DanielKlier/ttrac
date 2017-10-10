@@ -4,7 +4,6 @@ it('returns the initial state', () => {
     expect(reducer(undefined, {})).toEqual({
         byId      : {},
         allIds    : [],
-        byTaskId  : {},
         deletedIds: []
     });
 });
@@ -16,7 +15,6 @@ it('handles STOP_TASK_PROGRESS', () => {
     expect(reducer({
         byId      : {},
         allIds    : [],
-        byTaskId  : {},
         deletedIds: []
     }, {
         type   : 'STOP_TASK_PROGRESS',
@@ -32,9 +30,6 @@ it('handles STOP_TASK_PROGRESS', () => {
                 stopDate : date2,
                 deletion : {isDeleted: false, timestamp: null}
             }
-        },
-        byTaskId  : {
-            '2': ['1']
         },
         allIds    : ['1'],
         deletedIds: []
@@ -75,9 +70,6 @@ it('handles DELETE_TIME_LOGS', () => {
             '1': log1, '2': log2, '3': log3
         },
         allIds    : ['1', '2', '3'],
-        byTaskId  : {
-            '1': ['2'], '2': ['1', '3']
-        },
         deletedIds: []
     }, {
         type   : 'DELETE_TIMELOGS',
@@ -89,7 +81,6 @@ it('handles DELETE_TIME_LOGS', () => {
             '3': log3
         },
         allIds    : ['3'],
-        byTaskId  : {'2': ['3']},
         deletedIds: ['1', '2']
     });
 });

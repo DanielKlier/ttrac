@@ -53,7 +53,7 @@ const CurrentTasks = props => (
 const mapStateToProps = (state) => ({
     currentTasks: getCurrentTasks(state).map(task => {
 
-        const elapsedTime = (state.app.timeLogs.byTaskId[task.id] || [])
+        const elapsedTime = (task.timeLogIds || [])
             .map(logId => state.app.timeLogs.byId[logId])
             .reduce((time, log) => time + log.stopDate - log.startDate, 0);
 

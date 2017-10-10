@@ -19,10 +19,13 @@ export default function(taskId) {
             dispatch(stopTaskProgress(taskId, app.runningTask.startDate));
         }
 
-        // Delete time logs for this task, first
-        const timeLogIds = app.timeLogs.byTaskId[taskId];
-        dispatch(deleteTimelogs(timeLogIds));
+        const task = app.tasks.byId[taskId];
 
+        if (task) {
+            // Delete time logs for this task, first
+            dispatch(deleteTimelogs(task.timeLogIds));
+        }
+        
         return dispatch(deleteTask(taskId));
     };
 }
