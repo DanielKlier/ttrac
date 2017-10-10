@@ -16,7 +16,7 @@ export default function(taskId) {
         // If the task we want to delete is running, stop it, first
         const {app} = getState();
         if (app.runningTask && app.runningTask.taskId === taskId) {
-            dispatch(stopTaskProgress(taskId, app.runningTask.startDate));
+            dispatch(stopTaskProgress(taskId, app.runningTask.startDate, Date.now()));
         }
 
         const task = app.tasks.byId[taskId];
@@ -24,8 +24,8 @@ export default function(taskId) {
         if (task) {
             // Delete time logs for this task, first
             dispatch(deleteTimelogs(task.timeLogIds));
+            // Then delete the task itself
+            dispatch(deleteTask(taskId));
         }
-        
-        return dispatch(deleteTask(taskId));
     };
 }

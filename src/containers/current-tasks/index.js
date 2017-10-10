@@ -69,9 +69,9 @@ const mapDispatchToProps = dispatch => ({
     onAddNewTaskClick     : () => dispatch(createNewTask()),
     onTaskTitleChanged    : (taskId, text) => dispatch(
         setTaskTitle(taskId, text)),
-    onStartProgressClicked: (taskId) => dispatch(startTaskProgress(taskId)),
+    onStartProgressClicked: (taskId) => dispatch(startTaskProgress(taskId, Date.now())),
     onStopProgressClicked : (taskId, startDate) => dispatch(
-        stopTaskProgress(taskId, startDate)
+        stopTaskProgress(taskId, startDate, Date.now())
     ),
     onDeleteTaskClicked   : (taskId) => dispatch(deleteTask(taskId))
 });
