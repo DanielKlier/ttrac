@@ -11,7 +11,7 @@ import {
     startTaskProgress,
     stopTaskProgress
 } from '../../actions/';
-import {difference} from 'lodash';
+import getCurrentTasks from '../../selectors/tasks/getCurrentTasks';
 
 const CurrentTasks = props => (
     <div>
@@ -50,12 +50,11 @@ const CurrentTasks = props => (
     </div>
 );
 
-const mapStateToProps = ({app}) => ({
-    currentTasks: difference(app.tasks.allIds, app.tasks.deletedIds).map((id) => {
+const mapStateToProps = (state) => ({
+    currentTasks: getCurrentTasks(state).map(task => {
 
-        const task        = app.tasks.byId[id];
-        const elapsedTime = (app.timeLogs.byTaskId[id] || [])
-            .map(logId => app.timeLogs.byId[logId])
+        const elapsedTime = (state.app.timeLogs.byTaskId[task.id] || [])
+            .map(logId => state.app.timeLogs.byId[logId])
             .reduce((time, log) => time + log.stopDate - log.startDate, 0);
 
         return {
@@ -63,7 +62,7 @@ const mapStateToProps = ({app}) => ({
             elapsedTime
         };
     }),
-    runningTask : app.runningTask
+    runningTask : state.app.runningTask
 });
 
 const mapDispatchToProps = dispatch => ({
