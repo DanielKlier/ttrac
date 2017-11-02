@@ -37,5 +37,13 @@
     "test": "react-scripts test --env=jsdom",
     "test-cover": "react-scripts test --env=jsdom --coverage",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!node_modules/",
+      "!src/index.js",
+      "!src/registerServiceWorker.js"
+    ]
   }
 }
