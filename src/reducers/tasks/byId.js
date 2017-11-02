@@ -40,9 +40,9 @@ function addTimeLogToTask(state, action) {
     const {taskId, timeLogId} = payload;
 
     const task = state[taskId];
-    const currentLogs = task.timeLogIds || [];
 
     if (task) {
+        const currentLogs = task.timeLogIds || [];
         return {
             ...state,
             [taskId]: {...task, timeLogIds: currentLogs.concat(timeLogId)}

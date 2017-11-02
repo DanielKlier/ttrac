@@ -99,4 +99,26 @@ it('handles ADD_TIME_LOG_TO_TASK', () => {
             '1': {id: '1', timeLogIds: ['1']}
         }
     });
+
+    // Initializes timeLogIds property if undefined
+    expect(reducer({
+        byId      : {
+            '1': {id: '1'}
+        },
+        allIds    : ['1'],
+        deletedIds: []
+    }, {
+        type   : 'ADD_TIME_LOG_TO_TASK',
+        payload: {taskId: '1', timeLogId: '1'}
+    })).toEqual({
+        ...initialState, byId: {
+            '1': {id: '1', timeLogIds: ['1']}
+        }
+    });
+
+    // Don't do anything if tasks was not found
+    expect(reducer(initialState, {
+        type   : 'ADD_TIME_LOG_TO_TASK',
+        payload: {taskId: 'notfound', timeLogId: '1'}
+    })).toEqual(initialState);
 });
