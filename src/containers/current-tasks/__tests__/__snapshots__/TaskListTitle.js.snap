@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TaskListTitle behaves correctly 1`] = `
+<TaskListTitle
+  onTextChanged={[Function]}
+>
+  <h4
+    className="task-list-description"
+  >
+    <toggleDisplay
+      show={false}
+    >
+      <span
+        className="hidden"
+      >
+        <span
+          className="title"
+          onClick={[Function]}
+        />
+      </span>
+    </toggleDisplay>
+    <toggleDisplay
+      show={true}
+    >
+      <span
+        className=""
+      >
+        <input
+          className="title-input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Click to add a title"
+          type="text"
+          value=""
+        />
+      </span>
+    </toggleDisplay>
+  </h4>
+</TaskListTitle>
+`;
+
+exports[`TaskListTitle behaves correctly 2`] = `
+<TaskListTitle
+  onTextChanged={[Function]}
+>
+  <h4
+    className="task-list-description"
+  >
+    <toggleDisplay
+      show=""
+    >
+      <span
+        className="hidden"
+      >
+        <span
+          className="title"
+          onClick={[Function]}
+        />
+      </span>
+    </toggleDisplay>
+    <toggleDisplay
+      show={true}
+    >
+      <span
+        className=""
+      >
+        <input
+          className="title-input"
+          onBlur={[Function]}
+          onChange={[Function]}
+          placeholder="Click to add a title"
+          type="text"
+          value=""
+        />
+      </span>
+    </toggleDisplay>
+  </h4>
+</TaskListTitle>
+`;
+
+exports[`TaskListTitle renders correctly 1`] = `
+<h4
+  className="task-list-description"
+>
+  <span
+    className="hidden"
+  >
+    <span
+      className="title"
+      onClick={[Function]}
+    >
+      
+    </span>
+  </span>
+  <span
+    className=""
+  >
+    <input
+      className="title-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Click to add a title"
+      type="text"
+      value=""
+    />
+  </span>
+</h4>
+`;
+
+exports[`TaskListTitle renders correctly 2`] = `
+<h4
+  className="task-list-description"
+>
+  <span
+    className=""
+  >
+    <span
+      className="title"
+      onClick={[Function]}
+    >
+      My Title
+    </span>
+  </span>
+  <span
+    className="hidden"
+  >
+    <input
+      className="title-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      placeholder="Click to add a title"
+      type="text"
+      value="My Title"
+    />
+  </span>
+</h4>
+`;

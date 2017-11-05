@@ -2,10 +2,10 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 
 const shouldHide = props => {
-    if (props.show !== null) {
+    if (props.show !== null && props.show !== undefined) {
         return !props.show;
     }
-    else if (props.hide !== null) {
+    else if (props.hide !== null && props.hide !== undefined) {
         return !!props.hide;
     }
     else {
@@ -26,7 +26,7 @@ function toggleDisplay(props) {
         }
     });
 
-    const className = `${shouldHide(props) ? 'hidden' : ''}`;
+    const className = shouldHide(props) ? 'hidden' : '';
 
     return (
         <span className={className}>{props.children}</span>

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it handles the hide prop correctly 1`] = `
+<span
+  className="hidden"
+>
+  <div>
+    Hello
+  </div>
+</span>
+`;
+
+exports[`it handles the hide prop correctly 2`] = `
+<span
+  className=""
+>
+  <div>
+    Hello
+  </div>
+</span>
+`;
+
+exports[`it handles the show prop correctly 1`] = `
+<span
+  className=""
+>
+  <div>
+    Hello
+  </div>
+</span>
+`;
+
+exports[`it handles the show prop correctly 2`] = `
+<span
+  className="hidden"
+>
+  <div>
+    Hello
+  </div>
+</span>
+`;
+
+exports[`it renders the component when if prop is truthy or not present 1`] = `
+<span
+  className=""
+>
+  <div>
+    Hello
+  </div>
+</span>
+`;
+
+exports[`it renders the component when if prop is truthy or not present 2`] = `
+<span
+  className=""
+>
+  <div>
+    Hello
+  </div>
+</span>
+`;

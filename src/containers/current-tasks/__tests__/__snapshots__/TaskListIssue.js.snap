@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TaskListIssue renders correctly 1`] = `
+<span
+  className="task-list-issue"
+>
+  <a
+    href="/"
+  >
+    PRJ-123
+  </a>
+</span>
+`;

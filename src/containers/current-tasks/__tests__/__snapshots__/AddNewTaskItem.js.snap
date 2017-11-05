@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddNewTaskItem renders correctly 1`] = `
+<li
+  className="list-group-item"
+>
+  <div
+    className="clearfix"
+  >
+    <span
+      className="add-new-task-text"
+    >
+      Add new task
+    </span>
+    <button
+      className="pull-right btn btn-primary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="glyphicon glyphicon-plus"
+      />
+    </button>
+  </div>
+</li>
+`;

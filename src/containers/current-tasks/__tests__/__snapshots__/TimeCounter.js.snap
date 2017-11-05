@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimeCounter renders correctly 1`] = `
+<span
+  className="task-list-hours"
+>
+  <span
+    className="label label-warning"
+  >
+    0s
+  </span>
+</span>
+`;
+
+exports[`TimeCounter renders correctly 2`] = `
+<span
+  className="task-list-hours"
+>
+  <span
+    className="label label-warning"
+  >
+    1s
+  </span>
+</span>
+`;
