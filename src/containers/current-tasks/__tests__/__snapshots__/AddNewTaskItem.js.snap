@@ -1,27 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AddNewTaskItem renders correctly 1`] = `
-<li
-  className="list-group-item"
+<AddNewTaskItem
+  onClick={[Function]}
 >
-  <div
-    className="clearfix"
+  <li
+    className="list-group-item"
   >
-    <span
-      className="add-new-task-text"
+    <Clearfix
+      bsClass="clearfix"
+      componentClass="div"
     >
-      Add new task
-    </span>
-    <button
-      className="pull-right btn btn-primary"
-      disabled={false}
-      onClick={[Function]}
-      type="button"
-    >
-      <span
-        className="glyphicon glyphicon-plus"
-      />
-    </button>
-  </div>
-</li>
+      <div
+        className="clearfix"
+      >
+        <span
+          className="add-new-task-text"
+        >
+          Add new task
+        </span>
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="primary"
+          className="pull-right"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <button
+            className="pull-right btn btn-primary"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            <Glyphicon
+              bsClass="glyphicon"
+              glyph="plus"
+            >
+              <span
+                className="glyphicon glyphicon-plus"
+              />
+            </Glyphicon>
+          </button>
+        </Button>
+      </div>
+    </Clearfix>
+  </li>
+</AddNewTaskItem>
 `;
