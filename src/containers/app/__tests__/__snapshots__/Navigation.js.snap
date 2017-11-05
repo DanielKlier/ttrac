@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it renders the Navigation 1`] = `
+<nav
+  className="navbar navbar-inverse"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="navbar-header"
+    >
+      <a
+        className="navbar-brand"
+        href="/"
+        onClick={[Function]}
+      >
+        <img
+          alt="ttrac logo"
+          className="App-logo"
+          src="time-management.svg"
+        />
+      </a>
+      <button
+        className="navbar-toggle collapsed"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="sr-only"
+        >
+          Toggle navigation
+        </span>
+        <span
+          className="icon-bar"
+        />
+        <span
+          className="icon-bar"
+        />
+        <span
+          className="icon-bar"
+        />
+      </button>
+    </div>
+    <div
+      aria-expanded={null}
+      className="navbar-collapse collapse"
+    >
+      <ul
+        className="nav navbar-nav"
+        role={null}
+      >
+        <li
+          className="active"
+          role="presentation"
+          style={Object {}}
+        >
+          <a
+            href="/"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+          >
+            Home
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="/about-us"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+          >
+            About
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+`;

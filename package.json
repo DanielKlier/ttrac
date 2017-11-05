@@ -43,7 +43,8 @@
       "src/**/*.{js,jsx}",
       "!node_modules/",
       "!src/index.js",
-      "!src/registerServiceWorker.js"
+      "!src/registerServiceWorker.js",
+      "!src/containers/app/index.js"
     ]
   }
 }
