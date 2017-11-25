@@ -1,0 +1,10 @@
+.project-list-item {
+    padding: 0.5em 1em;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.project-list-item .buttons {
+    margin-left: auto;
+}

@@ -5,9 +5,9 @@ import TaskListHours from './TaskListHours';
 import TaskListIssue from './TaskListIssue';
 import TaskListTitle from './TaskListTitle';
 import TimeCounter from './TimeCounter';
-import DeleteButton from './DeleteButton';
 import StartProgressButton from './StartProgressButton';
 import StopProgressButton from './StopProgressButton';
+import DeleteButton from '../../../components/DeleteButton';
 
 class TaskListItem extends React.PureComponent {
     // noinspection JSUnusedGlobalSymbols
