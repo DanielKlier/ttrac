@@ -13,7 +13,7 @@ import {
 } from '../../actions/';
 import getCurrentTasks from '../../selectors/tasks/getCurrentTasks';
 
-const CurrentTasks = props => (
+export const CurrentTasks = props => (
     <div>
         <h1>Time Tracking</h1>
         <ListGroup componentClass="ul">
@@ -50,7 +50,7 @@ const CurrentTasks = props => (
     </div>
 );
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
     currentTasks: getCurrentTasks(state).map(task => {
 
         const elapsedTime = (task.timeLogIds || [])
@@ -65,7 +65,7 @@ const mapStateToProps = (state) => ({
     runningTask : state.app.runningTask
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
     onAddNewTaskClick     : () => dispatch(createNewTask()),
     onTaskTitleChanged    : (taskId, text) => dispatch(
         setTaskTitle(taskId, text)),
