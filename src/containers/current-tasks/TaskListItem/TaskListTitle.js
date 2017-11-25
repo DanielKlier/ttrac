@@ -1,12 +1,19 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import {noop} from 'lodash';
 import ToggleDisplay from '../../../components/ToggleDisplay';
 
 export default class TaskListTitle extends React.Component {
     // noinspection JSUnusedGlobalSymbols
     static propTypes = {
-        title        : PropTypes.string,
+        title: PropTypes.string,
         onTextChanged: PropTypes.func
+    };
+
+    // noinspection JSUnusedGlobalSymbols
+    static defaultProps = {
+        title: '',
+        onTextChanged: noop
     };
 
     constructor(props) {
@@ -14,7 +21,7 @@ export default class TaskListTitle extends React.Component {
 
         this.state = {
             isEditing: !props.title,
-            text     : this.props.title || ''
+            text: this.props.title || ''
         };
 
         this.titleInput = null;

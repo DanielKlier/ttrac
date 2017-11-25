@@ -1,12 +1,18 @@
 import * as React from 'react';
 import {Button, Clearfix, Glyphicon} from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import {noop} from 'lodash';
 
 class AddNewTaskItem extends React.PureComponent {
 
     // noinspection JSUnusedGlobalSymbols
     static propTypes = {
         onClick: PropTypes.func
+    };
+
+    // noinspection JSUnusedGlobalSymbols
+    static defaultProps = {
+        onClick: noop
     };
 
     render() {

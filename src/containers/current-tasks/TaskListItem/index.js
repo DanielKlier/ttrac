@@ -1,5 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import {identity} from 'lodash';
 import TaskListHours from './TaskListHours';
 import TaskListIssue from './TaskListIssue';
 import TaskListTitle from './TaskListTitle';
@@ -20,6 +21,19 @@ class TaskListItem extends React.PureComponent {
         onStartProgressClicked: PropTypes.func,
         onStopProgressClicked: PropTypes.func,
         onDeleteTaskClicked: PropTypes.func
+    };
+
+    // noinspection JSUnusedGlobalSymbols
+    static defaultProps = {
+        elapsedTime: 0,
+        jiraIssue: '',
+        title: '',
+        taskIsRunning: false,
+        runningTask: null,
+        onTaskTitleChanged: identity,
+        onStartProgressClicked: identity,
+        onStopProgressClicked: identity,
+        onDeleteTaskClicked: identity
     };
 
     render() {

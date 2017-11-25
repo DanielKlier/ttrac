@@ -11,4 +11,8 @@ TaskListIssue.propTypes = {
     issue: PropTypes.string
 };
 
+TaskListIssue.defaultProps = {
+    issue: ''
+};
+
 export default TaskListIssue;

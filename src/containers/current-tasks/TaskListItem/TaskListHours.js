@@ -20,4 +20,8 @@ TaskListHours.propTypes = {
     elapsedTime: PropTypes.number
 };
 
+TaskListHours.defaultProps = {
+    elapsedTime: 0
+};
+
 export default TaskListHours;

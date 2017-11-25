@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {ListGroup} from 'react-bootstrap';
 import TaskListItem from './TaskListItem';
@@ -12,6 +13,7 @@ import {
     stopTaskProgress
 } from '../../actions/';
 import getCurrentTasks from '../../selectors/tasks/getCurrentTasks';
+import {identity} from 'lodash';
 
 export const CurrentTasks = props => (
     <div>
@@ -49,6 +51,31 @@ export const CurrentTasks = props => (
         </ListGroup>
     </div>
 );
+
+CurrentTasks.propTypes = {
+    currentTasks: PropTypes.array,
+    runningTask: PropTypes.oneOfType([
+        PropTypes.shape({
+            taskId: PropTypes.string,
+            startDate: PropTypes.oneOfType([PropTypes.number, PropTypes.instanceOf(Date)])
+        })
+    ]),
+    onAddNewTaskClick: PropTypes.func,
+    onTaskTitleChanged: PropTypes.func,
+    onStartProgressClicked: PropTypes.func,
+    onStopProgressClicked: PropTypes.func,
+    onDeleteTaskClicked: PropTypes.func
+};
+
+CurrentTasks.defaultProps = {
+    currentTasks: [],
+    runningTask: null,
+    onAddNewTaskClick: identity,
+    onTaskTitleChanged: identity,
+    onStartProgressClicked: identity,
+    onStopProgressClicked: identity,
+    onDeleteTaskClicked: identity
+};
 
 export const mapStateToProps = (state) => ({
     currentTasks: getCurrentTasks(state).map(task => {
