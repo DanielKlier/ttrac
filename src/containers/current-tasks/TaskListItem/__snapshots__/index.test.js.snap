@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TaskListItem renders correctly 1`] = `
+<TaskListItem
+  elapsedTime={3600000}
+  jiraIssue="PRJ-123"
+  title="My Task"
+>
+  <li
+    className="list-group-item task-list-item"
+  >
+    <div
+      className="task-list-item-badges"
+    >
+      <TaskListHours
+        className="pull-left"
+        elapsedTime={3600000}
+      >
+        <span
+          className="task-list-hours"
+        >
+          <Label
+            bsClass="label"
+            bsStyle="info"
+          >
+            <span
+              className="label label-info"
+            >
+              60m 0s
+            </span>
+          </Label>
+        </span>
+      </TaskListHours>
+      <TaskListIssue
+        jiraIssue="PRJ-123"
+      >
+        <span
+          className="task-list-issue"
+        >
+          <a
+            href="/"
+          />
+        </span>
+      </TaskListIssue>
+    </div>
+    <div
+      className="task-list-item-main"
+    >
+      <TaskListTitle
+        onTextChanged={[Function]}
+        title="My Task"
+      >
+        <h4
+          className="task-list-description"
+        >
+          <toggleDisplay
+            show="My Task"
+          >
+            <span
+              className=""
+            >
+              <span
+                className="title"
+                onClick={[Function]}
+              >
+                My Task
+              </span>
+            </span>
+          </toggleDisplay>
+          <toggleDisplay
+            show={false}
+          >
+            <span
+              className="hidden"
+            >
+              <input
+                className="title-input"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Click to add a title"
+                type="text"
+                value="My Task"
+              />
+            </span>
+          </toggleDisplay>
+        </h4>
+      </TaskListTitle>
+    </div>
+    <div
+      className="task-list-item-buttons"
+    >
+      <DeleteButton
+        onClick={[Function]}
+      >
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="default"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <button
+            className="btn btn-default"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            <Glyphicon
+              bsClass="glyphicon"
+              glyph="trash"
+            >
+              <span
+                className="glyphicon glyphicon-trash"
+              />
+            </Glyphicon>
+          </button>
+        </Button>
+      </DeleteButton>
+    </div>
+  </li>
+</TaskListItem>
+`;
+
+exports[`TaskListItem renders correctly 2`] = `
+<TaskListItem
+  elapsedTime={3600000}
+  jiraIssue="PRJ-123"
+  runningTask={
+    Object {
+      "startDate": 2017-03-09T18:00:00.000Z,
+    }
+  }
+  taskIsRunning={true}
+  title="My Task"
+>
+  <li
+    className="list-group-item task-list-item running"
+  >
+    <div
+      className="task-list-item-badges"
+    >
+      <TimeCounter
+        startDate={2017-03-09T18:00:00.000Z}
+      >
+        <span
+          className="task-list-hours"
+        >
+          <Label
+            bsClass="label"
+            bsStyle="warning"
+          >
+            <span
+              className="label label-warning"
+            >
+              0s
+            </span>
+          </Label>
+        </span>
+      </TimeCounter>
+      <TaskListIssue
+        jiraIssue="PRJ-123"
+      >
+        <span
+          className="task-list-issue"
+        >
+          <a
+            href="/"
+          />
+        </span>
+      </TaskListIssue>
+    </div>
+    <div
+      className="task-list-item-main"
+    >
+      <TaskListTitle
+        onTextChanged={[Function]}
+        title="My Task"
+      >
+        <h4
+          className="task-list-description"
+        >
+          <toggleDisplay
+            show="My Task"
+          >
+            <span
+              className=""
+            >
+              <span
+                className="title"
+                onClick={[Function]}
+              >
+                My Task
+              </span>
+            </span>
+          </toggleDisplay>
+          <toggleDisplay
+            show={false}
+          >
+            <span
+              className="hidden"
+            >
+              <input
+                className="title-input"
+                onBlur={[Function]}
+                onChange={[Function]}
+                placeholder="Click to add a title"
+                type="text"
+                value="My Task"
+              />
+            </span>
+          </toggleDisplay>
+        </h4>
+      </TaskListTitle>
+    </div>
+    <div
+      className="task-list-item-buttons"
+    >
+      <DeleteButton
+        onClick={[Function]}
+      >
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="default"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <button
+            className="btn btn-default"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            <Glyphicon
+              bsClass="glyphicon"
+              glyph="trash"
+            >
+              <span
+                className="glyphicon glyphicon-trash"
+              />
+            </Glyphicon>
+          </button>
+        </Button>
+      </DeleteButton>
+      <Button
+        active={false}
+        block={false}
+        bsClass="btn"
+        bsStyle="default"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn-default"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <Glyphicon
+            bsClass="glyphicon"
+            glyph="pause"
+          >
+            <span
+              className="glyphicon glyphicon-pause"
+            />
+          </Glyphicon>
+        </button>
+      </Button>
+    </div>
+  </li>
+</TaskListItem>
+`;

@@ -23,3 +23,15 @@ exports[`TimeCounter renders correctly 2`] = `
   </span>
 </span>
 `;
+
+exports[`TimeCounter renders correctly 3`] = `
+<span
+  className="task-list-hours"
+>
+  <span
+    className="label label-warning"
+  >
+    1h 1m
+  </span>
+</span>
+`;

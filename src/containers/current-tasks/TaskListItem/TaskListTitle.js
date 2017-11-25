@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import ToggleDisplay from '../../components/ToggleDisplay';
+import ToggleDisplay from '../../../components/ToggleDisplay';
 
 export default class TaskListTitle extends React.Component {
     // noinspection JSUnusedGlobalSymbols
@@ -20,10 +20,6 @@ export default class TaskListTitle extends React.Component {
         this.titleInput = null;
     }
 
-    componentWillReceiveProps(props) {
-
-    }
-
     render() {
 
         return (
@@ -36,7 +32,9 @@ export default class TaskListTitle extends React.Component {
                 <ToggleDisplay show={this.state.isEditing || !this.state.text}>
                     <input type="text"
                            className="title-input"
-                           ref={el => {this.titleInput = el;}}
+                           ref={el => {
+                               this.titleInput = el;
+                           }}
                            value={this.state.text}
                            onBlur={(e) => this.stopEditing(e.target.value)}
                            placeholder="Click to add a title"
@@ -57,9 +55,10 @@ export default class TaskListTitle extends React.Component {
         });
     }
 
-    stopEditing(value) {
-        this.setState({isEditing: false});
-        this.props.onTextChanged(value);
+    stopEditing() {
+        this.setState({isEditing: false}, () => {
+            this.props.onTextChanged(this.state.text);
+        });
     }
 
     textInputChanged(value) {

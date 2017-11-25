@@ -7,8 +7,11 @@ import 'moment-duration-format';
 export default class TimeCounter extends React.Component {
 
     // noinspection JSUnusedGlobalSymbols
-    static PropTypes = {
-        startDate: PropTypes.number.isRequired
+    static propTypes = {
+        startDate: PropTypes.oneOfType([
+            PropTypes.instanceOf(Date),
+            PropTypes.number
+        ]).isRequired
     };
 
     constructor(props) {

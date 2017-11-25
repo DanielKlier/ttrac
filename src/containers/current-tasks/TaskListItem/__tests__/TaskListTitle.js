@@ -15,7 +15,8 @@ test('TaskListTitle renders correctly', () => {
 });
 
 test('TaskListTitle behaves correctly', () => {
-    const onTextChanged = jest.fn(() => {});
+    const onTextChanged = jest.fn(() => {
+    });
 
     const tree = mount(<TaskListTitle onTextChanged={onTextChanged}/>);
 
@@ -23,7 +24,11 @@ test('TaskListTitle behaves correctly', () => {
     tree.find('.title').simulate('click');
     expect(toJSON(tree)).toMatchSnapshot();
 
+    // Input of text and then blur should trigger a change event
+    tree.find('.title-input').simulate('change', {target: {value: 'hello'}});
+
     // Clicking outside of the input will cause it lose focus and hide it again
     tree.find('.title-input').simulate('blur');
     expect(toJSON(tree)).toMatchSnapshot();
+    expect(onTextChanged).toBeCalledWith('hello');
 });

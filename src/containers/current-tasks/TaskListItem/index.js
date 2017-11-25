@@ -5,19 +5,20 @@ import TaskListIssue from './TaskListIssue';
 import {Button, Glyphicon} from 'react-bootstrap';
 import TaskListTitle from './TaskListTitle';
 import TimeCounter from './TimeCounter';
+import DeleteButton from './DeleteButton';
 
 class TaskListItem extends React.PureComponent {
     // noinspection JSUnusedGlobalSymbols
-    static PropTypes = {
+    static propTypes = {
         elapsedTime           : PropTypes.number,
         jiraIssue             : PropTypes.string,
         title                 : PropTypes.string,
         taskIsRunning         : PropTypes.bool,
         runningTask           : PropTypes.object,
-        onTaskTitleChanged    : PropTypes.func.isRequired,
-        onStartProgressClicked: PropTypes.func.isRequired,
-        onStopProgressClicked : PropTypes.func.isRequired,
-        onDeleteTaskClicked   : PropTypes.func.isRequired
+        onTaskTitleChanged    : PropTypes.func,
+        onStartProgressClicked: PropTypes.func,
+        onStopProgressClicked : PropTypes.func,
+        onDeleteTaskClicked   : PropTypes.func
     };
 
     render() {
@@ -51,9 +52,7 @@ class TaskListItem extends React.PureComponent {
                                    }/>
                 </div>
                 <div className="task-list-item-buttons">
-                    <Button onClick={() => props.onDeleteTaskClicked()}>
-                        <Glyphicon glyph="trash"/>
-                    </Button>
+                    <DeleteButton onClick={() => props.onDeleteTaskClicked()}/>
                     {props.taskIsRunning === false &&
                     <Button onClick={() => props.onStartProgressClicked()}>
                         <Glyphicon glyph="time"/>
