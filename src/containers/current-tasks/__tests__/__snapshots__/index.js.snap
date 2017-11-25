@@ -39,6 +39,7 @@ exports[`it behaves correctly 1`] = `
         <TaskListItem
           elapsedTime={2000}
           id="1"
+          jiraIssue=""
           key="1"
           onDeleteTaskClicked={[Function]}
           onStartProgressClicked={[Function]}
@@ -51,6 +52,7 @@ exports[`it behaves correctly 1`] = `
             }
           }
           taskIsRunning={true}
+          title=""
         >
           <li
             className="list-group-item task-list-item running"
@@ -82,7 +84,7 @@ exports[`it behaves correctly 1`] = `
             >
               <TaskListTitle
                 onTextChanged={[Function]}
-                title={undefined}
+                title=""
               >
                 <h4
                   className="task-list-description"
@@ -181,7 +183,9 @@ exports[`it behaves correctly 1`] = `
           </li>
         </TaskListItem>
         <TaskListItem
+          elapsedTime={0}
           id="2"
+          jiraIssue=""
           key="2"
           onDeleteTaskClicked={[Function]}
           onStartProgressClicked={[Function]}
@@ -194,6 +198,7 @@ exports[`it behaves correctly 1`] = `
             }
           }
           taskIsRunning={false}
+          title=""
         >
           <li
             className="list-group-item task-list-item"
@@ -203,7 +208,7 @@ exports[`it behaves correctly 1`] = `
             >
               <TaskListHours
                 className="pull-left"
-                elapsedTime={undefined}
+                elapsedTime={0}
               >
                 <span
                   className="task-list-hours"
@@ -226,7 +231,7 @@ exports[`it behaves correctly 1`] = `
             >
               <TaskListTitle
                 onTextChanged={[Function]}
-                title={undefined}
+                title=""
               >
                 <h4
                   className="task-list-description"
