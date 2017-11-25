@@ -47,22 +47,24 @@ exports[`TaskListTitle behaves correctly 2`] = `
     className="task-list-description"
   >
     <toggleDisplay
-      show=""
+      show="hello"
     >
       <span
-        className="hidden"
+        className=""
       >
         <span
           className="title"
           onClick={[Function]}
-        />
+        >
+          hello
+        </span>
       </span>
     </toggleDisplay>
     <toggleDisplay
-      show={true}
+      show={false}
     >
       <span
-        className=""
+        className="hidden"
       >
         <input
           className="title-input"
@@ -70,7 +72,7 @@ exports[`TaskListTitle behaves correctly 2`] = `
           onChange={[Function]}
           placeholder="Click to add a title"
           type="text"
-          value=""
+          value="hello"
         />
       </span>
     </toggleDisplay>
