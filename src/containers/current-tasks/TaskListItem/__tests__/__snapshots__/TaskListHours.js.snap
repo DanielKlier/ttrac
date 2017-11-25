@@ -11,3 +11,15 @@ exports[`TaskListHours renders correctly 1`] = `
   </span>
 </span>
 `;
+
+exports[`TaskListHours renders correctly 2`] = `
+<span
+  className="task-list-hours"
+>
+  <span
+    className="label label-info"
+  >
+    1h 0m
+  </span>
+</span>
+`;

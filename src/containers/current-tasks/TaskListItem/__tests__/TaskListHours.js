@@ -7,4 +7,7 @@ test('TaskListHours renders correctly', () => {
     const tree      = component.toJSON();
 
     expect(tree).toMatchSnapshot();
+
+    const componentWithHours = renderer.create(<TaskListHours elapsedTime={3610000}/>)
+    expect(componentWithHours.toJSON()).toMatchSnapshot();
 });
