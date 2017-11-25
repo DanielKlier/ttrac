@@ -2,23 +2,24 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import TaskListHours from './TaskListHours';
 import TaskListIssue from './TaskListIssue';
-import {Button, Glyphicon} from 'react-bootstrap';
 import TaskListTitle from './TaskListTitle';
 import TimeCounter from './TimeCounter';
 import DeleteButton from './DeleteButton';
+import StartProgressButton from './StartProgressButton';
+import StopProgressButton from './StopProgressButton';
 
 class TaskListItem extends React.PureComponent {
     // noinspection JSUnusedGlobalSymbols
     static propTypes = {
-        elapsedTime           : PropTypes.number,
-        jiraIssue             : PropTypes.string,
-        title                 : PropTypes.string,
-        taskIsRunning         : PropTypes.bool,
-        runningTask           : PropTypes.object,
-        onTaskTitleChanged    : PropTypes.func,
+        elapsedTime: PropTypes.number,
+        jiraIssue: PropTypes.string,
+        title: PropTypes.string,
+        taskIsRunning: PropTypes.bool,
+        runningTask: PropTypes.object,
+        onTaskTitleChanged: PropTypes.func,
         onStartProgressClicked: PropTypes.func,
-        onStopProgressClicked : PropTypes.func,
-        onDeleteTaskClicked   : PropTypes.func
+        onStopProgressClicked: PropTypes.func,
+        onDeleteTaskClicked: PropTypes.func
     };
 
     render() {
@@ -54,14 +55,10 @@ class TaskListItem extends React.PureComponent {
                 <div className="task-list-item-buttons">
                     <DeleteButton onClick={() => props.onDeleteTaskClicked()}/>
                     {props.taskIsRunning === false &&
-                    <Button onClick={() => props.onStartProgressClicked()}>
-                        <Glyphicon glyph="time"/>
-                    </Button>
+                    <StartProgressButton onClick={() => props.onStartProgressClicked()}/>
                     }
                     {props.taskIsRunning === true &&
-                    <Button onClick={() => props.onStopProgressClicked()}>
-                        <Glyphicon glyph="pause"/>
-                    </Button>
+                    <StopProgressButton onClick={() => props.onStopProgressClicked()}/>
                     }
                 </div>
             </li>

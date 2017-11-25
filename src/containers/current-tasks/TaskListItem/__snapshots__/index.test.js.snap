@@ -244,30 +244,34 @@ exports[`TaskListItem renders correctly 2`] = `
           </button>
         </Button>
       </DeleteButton>
-      <Button
-        active={false}
-        block={false}
-        bsClass="btn"
-        bsStyle="default"
-        disabled={false}
+      <StopProgressButton
         onClick={[Function]}
       >
-        <button
-          className="btn btn-default"
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="default"
           disabled={false}
           onClick={[Function]}
-          type="button"
         >
-          <Glyphicon
-            bsClass="glyphicon"
-            glyph="pause"
+          <button
+            className="btn btn-default"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
           >
-            <span
-              className="glyphicon glyphicon-pause"
-            />
-          </Glyphicon>
-        </button>
-      </Button>
+            <Glyphicon
+              bsClass="glyphicon"
+              glyph="pause"
+            >
+              <span
+                className="glyphicon glyphicon-pause"
+              />
+            </Glyphicon>
+          </button>
+        </Button>
+      </StopProgressButton>
     </div>
   </li>
 </TaskListItem>
