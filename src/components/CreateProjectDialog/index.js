@@ -26,7 +26,7 @@ class CreateProjectDialog extends Component {
     render() {
         return (
             <Modal show={this.props.show} onHide={this.cancel}>
-                <Modal.Header>
+                <Modal.Header closeButton={true}>
                     <Modal.Title>Create new project</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
