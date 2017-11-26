@@ -13,7 +13,10 @@ class CreateProjectDialog extends Component {
         super();
 
         this.state = {
-            title: ''
+            formValid: false,
+            title: '',
+            titleValid: false,
+            titleHelp: ''
         };
     }
 
@@ -36,12 +39,18 @@ class CreateProjectDialog extends Component {
                     }}>
                         <FieldGroup id="createProjectName" label="Project name" type="text"
                                     value={this.state.title}
-                                    onChange={e => this.updateTitle(e.target.value)}/>
+                                    help={this.state.titleHelp}
+                                    onChange={e => this.updateTitle(e.target.value)}
+                                    validationState={this.getTitleValidationState()}
+                        />
                     </form>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button bsStyle="default" onClick={this.cancel}>Cancel</Button>
-                    <Button bsStyle="primary" onClick={this.complete}>Create</Button>
+                    <Button bsStyle="primary" disabled={!this.state.formValid}
+                            onClick={this.complete}>
+                        Create
+                    </Button>
                 </Modal.Footer>
             </Modal>
         );
@@ -60,16 +69,50 @@ class CreateProjectDialog extends Component {
         this.props.onComplete();
     };
 
+    validateForm() {
+
+        let titleValid = true;
+        let help       = '';
+
+        // Validate title
+        if (!this.state.title.length) {
+            titleValid = false;
+
+        }
+        else if (this.props.existingProjects.find(
+                p => p.title.toLowerCase() === this.state.title.toLowerCase())
+        ) {
+            help       = 'Project already exists';
+            titleValid = false;
+        }
+
+        this.setState({
+            titleValid: titleValid,
+            titleHelp: help,
+            formValid: titleValid
+        });
+    }
+
     updateTitle = title => {
-        this.setState({title});
+        this.setState({title}, this.validateForm);
     };
+
+    getTitleValidationState() {
+        if (this.state.titleValid || this.state.title.length === 0) {
+            return null;
+        }
+        else {
+            return 'error';
+        }
+    }
 }
 
 CreateProjectDialog.propTypes = {
     onComplete: PropTypes.func,
     onCancel: PropTypes.func,
     show: PropTypes.bool,
-    createProject: PropTypes.func
+    createProject: PropTypes.func,
+    existingProjects: PropTypes.array
 };
 
 CreateProjectDialog.defaultProps = {

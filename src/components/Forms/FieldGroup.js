@@ -13,11 +13,11 @@ function FieldGroup({id, label, help, validationState, ...props}) {
 }
 
 FieldGroup.propTypes = {
-    id: PropTypes.string.required,
-    label: PropTypes.string.required,
+    //...FormControl.propTypes,
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
     help: PropTypes.string,
     validationState: PropTypes.oneOf(['success', 'warning', 'error', null]),
-    ...FormControl.propTypes
 };
 
 FieldGroup.defaultProps = {
