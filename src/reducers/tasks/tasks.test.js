@@ -1,5 +1,5 @@
 import reducer from './index';
-import {DELETE_TASK} from '../../actions/actionTypes';
+import {DELETE_TASK, TASK_SET_PROJECT} from '../../actions/actionTypes';
 
 it('returns the initial state', () => {
     expect(reducer(undefined, {})).toEqual({
@@ -121,4 +121,27 @@ it('handles ADD_TIME_LOG_TO_TASK', () => {
         type   : 'ADD_TIME_LOG_TO_TASK',
         payload: {taskId: 'notfound', timeLogId: '1'}
     })).toEqual(initialState);
+});
+
+it('handles TASK_SET_PROJECT', () => {
+
+    expect(reducer({
+        byId      : {
+            '1': {id: '1', timeLogIds: []}
+        },
+        allIds    : ['1'],
+        deletedIds: []
+    }, {
+        type: TASK_SET_PROJECT,
+        payload: {
+            taskId: '1',
+            projectId: '1'
+        }
+    })).toEqual({
+        byId      : {
+            '1': {id: '1', timeLogIds: [], projectId: '1'}
+        },
+        allIds    : ['1'],
+        deletedIds: []
+    })
 });

@@ -5,7 +5,8 @@ export const STOP_TASK_PROGRESS      = 'STOP_TASK_PROGRESS';
 export const DELETE_TASK             = 'DELETE_TASK';
 export const DELETE_TIMELOGS         = 'DELETE_TIMELOGS';
 export const ADD_TIME_LOG_TO_TASK    = 'ADD_TIME_LOG_TO_TASK';
+export const TASK_SET_PROJECT        = 'TASK_SET_PROJECT';
 
 export const CREATE_NEW_PROJECT = 'CREATE_NEW_PROJECT';
-export const DELETE_PROJECT = 'DELETE_PROJECT';
-export const SET_PROJECT_TITLE = 'SET_PROJECT_TITLE';
+export const DELETE_PROJECT     = 'DELETE_PROJECT';
+export const SET_PROJECT_TITLE  = 'SET_PROJECT_TITLE';
