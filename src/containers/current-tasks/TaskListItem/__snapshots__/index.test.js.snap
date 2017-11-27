@@ -4,6 +4,12 @@ exports[`TaskListItem renders correctly 1`] = `
 <TaskListItem
   elapsedTime={3600000}
   jiraIssue="PRJ-123"
+  onDeleteTaskClicked={[Function]}
+  onStartProgressClicked={[Function]}
+  onStopProgressClicked={[Function]}
+  onTaskTitleChanged={[Function]}
+  runningTask={null}
+  taskIsRunning={false}
   title="My Task"
 >
   <li
@@ -32,6 +38,7 @@ exports[`TaskListItem renders correctly 1`] = `
         </span>
       </TaskListHours>
       <TaskListIssue
+        issue=""
         jiraIssue="PRJ-123"
       >
         <span
@@ -117,6 +124,34 @@ exports[`TaskListItem renders correctly 1`] = `
           </button>
         </Button>
       </DeleteButton>
+      <StartProgressButton
+        onClick={[Function]}
+      >
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsStyle="default"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <button
+            className="btn btn-default"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            <Glyphicon
+              bsClass="glyphicon"
+              glyph="time"
+            >
+              <span
+                className="glyphicon glyphicon-time"
+              />
+            </Glyphicon>
+          </button>
+        </Button>
+      </StartProgressButton>
     </div>
   </li>
 </TaskListItem>
@@ -126,6 +161,10 @@ exports[`TaskListItem renders correctly 2`] = `
 <TaskListItem
   elapsedTime={3600000}
   jiraIssue="PRJ-123"
+  onDeleteTaskClicked={[Function]}
+  onStartProgressClicked={[Function]}
+  onStopProgressClicked={[Function]}
+  onTaskTitleChanged={[Function]}
   runningTask={
     Object {
       "startDate": 2017-03-09T18:00:00.000Z,
@@ -159,6 +198,7 @@ exports[`TaskListItem renders correctly 2`] = `
         </span>
       </TimeCounter>
       <TaskListIssue
+        issue=""
         jiraIssue="PRJ-123"
       >
         <span

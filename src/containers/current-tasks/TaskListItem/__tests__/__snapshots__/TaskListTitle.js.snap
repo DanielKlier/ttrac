@@ -3,6 +3,7 @@
 exports[`TaskListTitle behaves correctly 1`] = `
 <TaskListTitle
   onTextChanged={[Function]}
+  title=""
 >
   <h4
     className="task-list-description"
@@ -42,6 +43,7 @@ exports[`TaskListTitle behaves correctly 1`] = `
 exports[`TaskListTitle behaves correctly 2`] = `
 <TaskListTitle
   onTextChanged={[Function]}
+  title=""
 >
   <h4
     className="task-list-description"
