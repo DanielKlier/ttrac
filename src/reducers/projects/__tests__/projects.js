@@ -19,11 +19,12 @@ it('it allows a project to be created', () => {
         payload: {
             id: '1',
             title: 'New Project 1',
+            code: 'NP1',
             timestamp: 1000
         }
     })).toEqual({
         byId: {
-            '1': {id: '1', title: 'New Project 1', timestamp: 1000}
+            '1': {id: '1', title: 'New Project 1', code: 'NP1', timestamp: 1000}
         },
         allIds: ['1'],
         deletedIds: []
