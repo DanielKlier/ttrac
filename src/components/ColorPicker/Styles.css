@@ -1,0 +1,18 @@
+.color-button {
+    width: 24px;
+    height: 24px;
+}
+
+.color-picker .btn {
+    padding: 4px;
+    margin: 0 6px 6px 0;
+    float: left;
+}
+
+.color-picker .btn:last-of-type {
+    margin: 0;
+}
+
+.color-picker .btn.selected {
+    outline: 1px solid #337ab7;
+}

@@ -27,6 +27,9 @@ export default props => (
           <LinkContainer to="/about-us" exact>
             <NavItem eventKey={3}>About</NavItem>
           </LinkContainer>
+            <LinkContainer to="/testground" exact>
+                <NavItem eventKey={4}>Testground</NavItem>
+            </LinkContainer>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

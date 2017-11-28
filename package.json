@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "color-convert": "^1.9.1",
     "history": "^4.6.3",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
