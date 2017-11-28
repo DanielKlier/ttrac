@@ -1,6 +1,7 @@
 import * as React from 'react';
+import {findDOMNode} from 'react-dom';
 import PropTypes from 'prop-types';
-import {Button, OverlayTrigger, Popover} from 'react-bootstrap';
+import {Button, Overlay, Popover} from 'react-bootstrap';
 import uuid from 'uuid';
 import {noop} from 'lodash';
 import './Styles.css';
@@ -23,6 +24,12 @@ class ColorPicker extends React.Component {
         super();
 
         this.id = 'ColorPicker_' + uuid();
+
+        this.toggleButton = null;
+
+        this.state = {
+            isOpen: false
+        };
     }
 
     render() {
@@ -34,11 +41,14 @@ class ColorPicker extends React.Component {
 
         return (
             <div className="color-picker">
-                <OverlayTrigger trigger="click" placement="bottom" overlay={colors} rootClose>
-                    <Button>
-                        <div className="color-button" style={backgroundStyle}/>
-                    </Button>
-                </OverlayTrigger>
+                <Button ref={ref => this.toggleButton = ref} onClick={this.toggleOverlay}>
+                    <div className="color-button" style={backgroundStyle}/>
+                </Button>
+
+                <Overlay show={this.state.isOpen} onHide={() => this.toggleOverlay(false)} rootClose
+                         target={props => findDOMNode(this.toggleButton)} placement="bottom">
+                    {colors}
+                </Overlay>
             </div>
         );
     }
@@ -69,6 +79,16 @@ class ColorPicker extends React.Component {
 
     updateColor = (color) => {
         this.props.onChange(color);
+        this.toggleOverlay(false);
+    };
+
+    toggleOverlay = (isOpen) => {
+        // Toggle semantics
+        if (isOpen === undefined) {
+            isOpen = !this.state.isOpen;
+        }
+
+        this.setState({isOpen});
     };
 }
 
