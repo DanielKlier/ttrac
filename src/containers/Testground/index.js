@@ -1,9 +1,21 @@
 import React, {Component} from 'react';
 import ColorPicker from '../../components/ColorPicker/index';
-import {range, first} from 'lodash';
+import {first, range} from 'lodash';
 import colorConverter from 'color-convert';
 
 class Testground extends Component {
+
+    constructor() {
+        super();
+
+        this.colorPickerColors = this.makeColors(16);
+
+        this.state = {
+            colorPicker: first(this.colorPickerColors)
+        };
+
+    }
+
     render() {
 
         const components = [
@@ -27,21 +39,24 @@ class Testground extends Component {
 
     colorPicker() {
 
-        const numColors = 16;
-        const stepSize  = 1 / (numColors + 1);
+        return {
+            name: 'ColorPicker',
+            component: <ColorPicker colorPalette={this.colorPickerColors}
+                                    value={this.state.colorPicker}
+                                    onChange={v => this.setState({colorPicker: v})}/>
+        };
+    }
 
-        const colors = range(numColors).map(i => {
+    makeColors(numColors) {
+        const stepSize = 1 / (numColors + 1);
+
+        return range(numColors).map(i => {
             const h = Math.round(i * stepSize * 360);
             const s = 50;
             const l = 50;
 
             return '#' + colorConverter.hsl.hex(h, s, l);
         });
-
-        return {
-            name: 'ColorPicker',
-            component: <ColorPicker colorPalette={colors} value={first(colors)}/>
-        };
     }
 }
 
