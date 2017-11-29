@@ -1,28 +1,65 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {noop} from 'lodash';
-import {Button, Modal} from 'react-bootstrap';
-import FieldGroup from '../Forms/FieldGroup';
+import {
+    Button,
+    Col,
+    ControlLabel,
+    Form,
+    FormControl,
+    FormGroup,
+    HelpBlock,
+    Modal,
+    Row
+} from 'react-bootstrap';
 import {connect} from 'react-redux';
+import {noop, range, first} from 'lodash';
 import getProjects from '../../selectors/projects/getProjects';
 import {createProject} from '../../actions/index';
+import ColorPicker from '../ColorPicker/index';
+import colorConverter from 'color-convert';
+
+function makeColors(numColors) {
+    const stepSize = 1 / (16);
+
+    return range(numColors).map(i => {
+        const h = Math.round((i * stepSize * 360) % 360);
+        const s = 25
+            + Math.floor((i % 64) / 16) * 25
+            + Math.floor((i % 32) / 32) * 25
+            + Math.floor((i % 16) / 48) * 25;
+        const l = 50;
+
+        return '#' + colorConverter.hsl.hex(h, s, l);
+    });
+}
 
 class CreateProjectDialog extends Component {
 
     constructor() {
         super();
 
+        this.colorPalette = makeColors(64);
+
         this.state = {
             formValid: false,
             title: '',
             titleValid: false,
-            titleHelp: ''
+            titleHelp: '',
+            code: '',
+            codeValid: false,
+            codeHelp: '',
+            color: first(this.colorPalette)
         };
+    }
+
+    componentDidMount() {
+        this.validateForm();
     }
 
     reset() {
         this.setState({
-            title: ''
+            title: '',
+            code: ''
         });
     }
 
@@ -33,17 +70,43 @@ class CreateProjectDialog extends Component {
                     <Modal.Title>Create new project</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <form onSubmit={e => {
+                    <Form onSubmit={e => {
                         e.preventDefault();
                         this.complete();
                     }}>
-                        <FieldGroup id="createProjectName" label="Project name" type="text"
-                                    value={this.state.title}
-                                    help={this.state.titleHelp}
-                                    onChange={e => this.updateTitle(e.target.value)}
-                                    validationState={this.getTitleValidationState()}
-                        />
-                    </form>
+                        <FormGroup controlId="createProjectName"
+                                   validationState={this.getTitleValidationState()}>
+                            <ControlLabel>Project Name</ControlLabel>
+                            <FormControl type="text" value={this.state.title}
+                                         placeholder="Enter a project name"
+                                         onChange={e => this.updateTitle(e.target.value)}/>
+                            {this.state.titleHelp &&
+                            <HelpBlock>{this.state.titleHelp}</HelpBlock>
+                            }
+                        </FormGroup>
+                        <Row>
+                            <Col sm={2}>
+                                <FormGroup controlId="createProjectCode"
+                                           validationState={this.getCodeValidationState()}>
+                                    <ControlLabel>Code</ControlLabel>
+                                    <FormControl type="text" value={this.state.code} maxLength={4}
+                                                 placeholder="ABC"
+                                                 onChange={e => this.updateCode(e.target.value)}/>
+                                    {this.state.codeHelp &&
+                                    <HelpBlock>{this.state.codeHelp}</HelpBlock>
+                                    }
+                                </FormGroup>
+                            </Col>
+                            <Col sm={2}>
+                                <FormGroup controlId="createProjectColor">
+                                    <ControlLabel>Color</ControlLabel>
+                                    <ColorPicker colorPalette={this.colorPalette}
+                                                 value={this.state.color}
+                                                 onChange={this.updateColor}/>
+                                </FormGroup>
+                            </Col>
+                        </Row>
+                    </Form>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button bsStyle="default" onClick={this.cancel}>Cancel</Button>
@@ -64,17 +127,19 @@ class CreateProjectDialog extends Component {
     complete = () => {
         this.reset();
         this.props.createProject({
-            title: this.state.title
+            title: this.state.title,
+            code: this.state.code,
+            color: this.state.color
         });
         this.props.onComplete();
     };
 
     validateForm() {
 
-        let titleValid = true;
-        let help       = '';
-
         // Validate title
+        let titleValid = true;
+        let titleHelp  = '';
+
         if (!this.state.title.length) {
             titleValid = false;
 
@@ -82,14 +147,28 @@ class CreateProjectDialog extends Component {
         else if (this.props.existingProjects.find(
                 p => p.title.toLowerCase() === this.state.title.toLowerCase())
         ) {
-            help       = 'Project already exists';
+            titleHelp  = 'Project already exists';
             titleValid = false;
         }
 
+        // Validate code
+        let codeValid = true;
+        let codeHelp  = '';
+
+        if (!this.state.code.length) {
+            codeValid = false;
+        }
+        else if (this.props.existingProjects.find(
+                p => p.code.toLowerCase() === this.state.code.toLowerCase())
+        ) {
+            codeHelp  = 'Must be unique';
+            codeValid = false;
+        }
+
         this.setState({
-            titleValid: titleValid,
-            titleHelp: help,
-            formValid: titleValid
+            titleValid, titleHelp,
+            codeValid, codeHelp,
+            formValid: titleValid && codeValid
         });
     }
 
@@ -105,6 +184,23 @@ class CreateProjectDialog extends Component {
             return 'error';
         }
     }
+
+    getCodeValidationState() {
+        if (this.state.codeValid || this.state.code.length === 0) {
+            return null;
+        }
+        else {
+            return 'error';
+        }
+    }
+
+    updateCode = code => {
+        this.setState({code}, this.validateForm);
+    };
+
+    updateColor = color => {
+        this.setState({color}, this.validateForm);
+    };
 }
 
 CreateProjectDialog.propTypes = {
