@@ -41,7 +41,7 @@ class ColorPicker extends React.Component {
 
         return (
             <div className="color-picker">
-                <Button ref={ref => this.toggleButton = ref} onClick={this.toggleOverlay}>
+                <Button ref={ref => this.toggleButton = ref} onClick={() => this.toggleOverlay()}>
                     <div className="color-button" style={backgroundStyle}/>
                 </Button>
 
@@ -54,23 +54,26 @@ class ColorPicker extends React.Component {
     }
 
     renderColors() {
-        const {value} = this.props.value;
+        const {value} = this.props;
 
         return (
             <Popover id={this.id} className="color-picker">
                 {this.props.colorPalette.map((color, index) => {
-                    const classes = [
+                    const classes    = [
                         'color-button'
                     ];
-
+                    let wrapperClass = 'color-button-outer';
                     if (color === value) {
-                        classes.push('selected');
+                        wrapperClass += ' selected';
                     }
 
                     return (
-                        <Button key={index} onClick={() => this.updateColor(color)}>
-                            <div className={classes.join(' ')} style={{backgroundColor: color}}/>
-                        </Button>
+                        <div className={wrapperClass} key={index}>
+                            <Button onClick={() => this.updateColor(color)}>
+                                <div className={classes.join(' ')}
+                                     style={{backgroundColor: color}}/>
+                            </Button>
+                        </div>
                     );
                 })}
             </Popover>

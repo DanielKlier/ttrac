@@ -1,18 +1,22 @@
-.color-button {
+.color-picker .color-button {
     width: 24px;
     height: 24px;
 }
 
-.color-picker .btn {
-    padding: 4px;
+.color-picker .color-button-outer {
     margin: 0 6px 6px 0;
     float: left;
 }
 
-.color-picker .btn:last-of-type {
+.color-picker .color-button-outer:last-of-type {
     margin: 0;
 }
 
-.color-picker .btn.selected {
-    outline: 1px solid #337ab7;
+.color-picker .color-button-outer.selected .btn {
+    border: 1px solid #337ab7;
+    box-shadow: 0 0 1px #337ab7;
+}
+
+.color-picker .btn {
+    padding: 4px;
 }
