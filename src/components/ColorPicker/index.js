@@ -57,7 +57,7 @@ class ColorPicker extends React.Component {
         const {value} = this.props;
 
         return (
-            <Popover id={this.id} className="color-picker">
+            <Popover id={this.id} className="color-picker-overlay">
                 {this.props.colorPalette.map((color, index) => {
                     const classes    = [
                         'color-button'

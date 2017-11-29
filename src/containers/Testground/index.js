@@ -8,7 +8,7 @@ class Testground extends Component {
     constructor() {
         super();
 
-        this.colorPickerColors = this.makeColors(16);
+        this.colorPickerColors = this.makeColors(64);
 
         this.state = {
             colorPicker: first(this.colorPickerColors)
@@ -48,11 +48,14 @@ class Testground extends Component {
     }
 
     makeColors(numColors) {
-        const stepSize = 1 / (numColors + 1);
+        const stepSize = 1 / (16);
 
         return range(numColors).map(i => {
-            const h = Math.round(i * stepSize * 360);
-            const s = 50;
+            const h = Math.round((i * stepSize * 360) % 360);
+            const s = 25
+                + Math.floor((i % 64) / 16) * 25
+                + Math.floor((i % 32) / 32) * 25
+                + Math.floor((i % 16) / 48) * 25;
             const l = 50;
 
             return '#' + colorConverter.hsl.hex(h, s, l);
