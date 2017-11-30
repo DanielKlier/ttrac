@@ -6,7 +6,7 @@ import About from '../about';
 import Footer from './Footer';
 import Navigation from './Navigation';
 import './app.css';
-import Testground from '../Testground/index';
+import Testground from '../testground/index';
 
 export default () => (
     <div className="page">
