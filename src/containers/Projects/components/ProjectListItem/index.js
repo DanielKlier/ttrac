@@ -3,11 +3,16 @@ import PropTypes from 'prop-types';
 import './Styles.css';
 import DeleteButton from '../../../../components/DeleteButton';
 import {noop} from 'lodash';
+import ProjectTitle from './ProjectTitle';
+import ProjectCode from './ProjectCode';
+import ProjectColor from './ProjectColor';
 
 function ProjectListItem(props) {
     return (
         <div className="project-list-item">
-            <span>{props.project.title}</span>
+            <ProjectCode>{props.project.code}</ProjectCode>
+            <ProjectColor color={props.project.color}/>
+            <ProjectTitle>{props.project.title}</ProjectTitle>
             <span className="buttons">
                 <DeleteButton onClick={() => props.onDeleteProject(props.project.id)}/>
             </span>

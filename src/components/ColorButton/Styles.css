@@ -1,0 +1,16 @@
+.color-button .color-tile {
+    width: 24px;
+    height: 24px;
+}
+.color-button .btn {
+    padding: 4px;
+}
+
+.color-button .btn[disabled] {
+    cursor: default;
+}
+
+.color-button.selected .btn {
+    border: 1px solid #337ab7;
+    box-shadow: 0 0 1px #337ab7;
+}

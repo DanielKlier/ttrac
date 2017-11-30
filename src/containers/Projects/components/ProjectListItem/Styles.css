@@ -8,3 +8,18 @@
 .project-list-item .buttons {
     margin-left: auto;
 }
+
+.project-list-item .project-code {
+    width: 54px;
+    text-align: right;
+}
+
+.project-list-item .project-code,
+.project-list-item .color-button {
+    margin: 0 .6em 0 0;
+}
+
+.project-list-item .color-button .color-tile {
+    width: 18px;
+    height: 18px;
+}

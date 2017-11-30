@@ -1,10 +1,11 @@
 import * as React from 'react';
 import {findDOMNode} from 'react-dom';
 import PropTypes from 'prop-types';
-import {Button, Overlay, Popover} from 'react-bootstrap';
+import {Overlay, Popover} from 'react-bootstrap';
 import uuid from 'uuid';
 import {noop} from 'lodash';
 import './Styles.css';
+import ColorButton from '../ColorButton/index';
 
 class ColorPicker extends React.Component {
 
@@ -33,18 +34,13 @@ class ColorPicker extends React.Component {
     }
 
     render() {
-        const backgroundStyle = {
-            backgroundColor: this.props.value
-        };
-
         const colors = this.renderColors();
 
         return (
             <div className="color-picker">
-                <Button ref={ref => this.toggleButton = ref} onClick={() => this.toggleOverlay()}>
-                    <div className="color-button" style={backgroundStyle}/>
-                </Button>
-
+                <div ref={ref => this.toggleButton = ref} className="clearfix toggle-wrap">
+                    <ColorButton color={this.props.value} onClick={() => this.toggleOverlay()} />
+                </div>
                 <Overlay show={this.state.isOpen} onHide={() => this.toggleOverlay(false)} rootClose
                          target={props => findDOMNode(this.toggleButton)} placement="bottom">
                     {colors}
@@ -59,21 +55,11 @@ class ColorPicker extends React.Component {
         return (
             <Popover id={this.id} className="color-picker-overlay">
                 {this.props.colorPalette.map((color, index) => {
-                    const classes    = [
-                        'color-button'
-                    ];
-                    let wrapperClass = 'color-button-outer';
-                    if (color === value) {
-                        wrapperClass += ' selected';
-                    }
 
                     return (
-                        <div className={wrapperClass} key={index}>
-                            <Button onClick={() => this.updateColor(color)}>
-                                <div className={classes.join(' ')}
-                                     style={{backgroundColor: color}}/>
-                            </Button>
-                        </div>
+                        <ColorButton key={index} color={color}
+                                     onClick={() => this.updateColor(color)}
+                                     isSelected={value === color}/>
                     );
                 })}
             </Popover>

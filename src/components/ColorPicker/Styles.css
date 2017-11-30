@@ -2,34 +2,23 @@
     max-width: 346px;
 }
 
-.color-picker .color-button, .color-picker-overlay .color-button {
-    width: 24px;
-    height: 24px;
+.color-picker .toggle-wrap {
+    display: inline-block;
+    position: relative;
 }
 
-.color-picker .color-button-outer,
-.color-picker-overlay .color-button-outer {
+.color-picker .color-button,
+.color-picker-overlay .color-button {
     margin: 0 6px 6px 0;
     float: left;
 }
 
-.color-picker .color-button-outer:nth-of-type(8n),
-.color-picker-overlay .color-button-outer:nth-of-type(8n) {
+.color-picker .color-button:nth-of-type(8n),
+.color-picker-overlay .color-button:nth-of-type(8n) {
     margin-right: 0;
 }
 
-.color-picker .color-button-outer:last-of-type,
-.color-picker-overlay .color-button-outer:last-of-type {
+.color-picker .color-button:last-of-type,
+.color-picker-overlay .color-button:last-of-type {
     margin: 0;
-}
-
-.color-picker .color-button-outer.selected .btn,
-.color-picker-overlay .color-button-outer.selected .btn {
-    border: 1px solid #337ab7;
-    box-shadow: 0 0 1px #337ab7;
-}
-
-.color-picker .btn,
-.color-picker-overlay .btn {
-    padding: 4px;
 }
