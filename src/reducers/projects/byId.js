@@ -1,11 +1,11 @@
 import {CREATE_NEW_PROJECT, SET_PROJECT_TITLE} from '../../actions/actionTypes';
 
 function createNewProject(state, payload) {
-    const {id, title, code, timestamp} = payload;
+    const {id, title, code, color, timestamp} = payload;
 
     return {
         ...state,
-        [id]: {id, title, code, timestamp}
+        [id]: {id, title, code, color, timestamp}
     };
 }
 

@@ -1,6 +1,8 @@
 import reducer from '../index';
 import {CREATE_NEW_PROJECT, DELETE_PROJECT, SET_PROJECT_TITLE} from '../../../actions/actionTypes';
 
+const project1 = {id: '1', title: 'New Project 1', code: 'NP1', color: '#ffaaff', timestamp: 1000};
+
 it('returns the initial state', () => {
     expect(reducer(undefined, {})).toEqual({
         byId: {},
@@ -16,15 +18,10 @@ it('it allows a project to be created', () => {
         deletedIds: []
     }, {
         type: CREATE_NEW_PROJECT,
-        payload: {
-            id: '1',
-            title: 'New Project 1',
-            code: 'NP1',
-            timestamp: 1000
-        }
+        payload: {...project1}
     })).toEqual({
         byId: {
-            '1': {id: '1', title: 'New Project 1', code: 'NP1', timestamp: 1000}
+            '1': {...project1}
         },
         allIds: ['1'],
         deletedIds: []
@@ -34,7 +31,7 @@ it('it allows a project to be created', () => {
 it('allows a project to be deleted', () => {
     expect(reducer({
         byId: {
-            '1': {id: '1', title: 'New Project 1', timestamp: 1000}
+            '1': {...project1}
         },
         allIds: ['1'],
         deletedIds: []
@@ -45,7 +42,7 @@ it('allows a project to be deleted', () => {
         }
     })).toEqual({
         byId: {
-            '1': {id: '1', title: 'New Project 1', timestamp: 1000}
+            '1': {...project1}
         },
         allIds: ['1'],
         deletedIds: ['1']
@@ -55,7 +52,7 @@ it('allows a project to be deleted', () => {
 it('allows a project\'s title to be changed', () => {
     expect(reducer({
         byId: {
-            '1': {id: '1', title: 'New Project 1', timestamp: 1000}
+            '1': {...project1}
         },
         allIds: ['1'],
         deletedIds: []
@@ -66,7 +63,7 @@ it('allows a project\'s title to be changed', () => {
         }
     })).toEqual({
         byId: {
-            '1': {id: '1', title: 'My Foo project', timestamp: 1000}
+            '1': {...project1, title: 'My Foo project'}
         },
         allIds: ['1'],
         deletedIds: []
