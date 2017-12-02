@@ -65,13 +65,16 @@ class TaskListItem extends React.PureComponent {
                     {props.jiraIssue &&
                     <TaskListIssue jiraIssue={props.jiraIssue}/>}
                 </div>
+                <div className="task-list-item-project">
+                    <TaskListProject project={props.project}
+                                     onProjectChanged={props.onProjectChanged}/>
+                </div>
                 <div className="task-list-item-main">
                     <TaskListTitle title={props.title}
                                    onTextChanged={
                                        text => props.onTaskTitleChanged(text)
                                    }/>
                 </div>
-                <TaskListProject project={props.project} onChange={props.onProjectChanged} />
                 <div className="task-list-item-buttons">
                     <DeleteButton onClick={() => props.onDeleteTaskClicked()}/>
                     {props.taskIsRunning === false &&

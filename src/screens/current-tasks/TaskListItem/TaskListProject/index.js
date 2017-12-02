@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {findDOMNode} from 'react-dom';
 import {noop} from 'lodash';
-import {Button, Glyphicon, Overlay, Popover} from 'react-bootstrap';
-import FindProjectDialog from '../../../components/FindProjectDialog/index';
+import {Button, Glyphicon, Label, Overlay, Popover} from 'react-bootstrap';
+import FindProjectDialog from '../../../../components/FindProjectDialog/index';
 import uuid from 'uuid';
+import './Styles.css';
 
 class TaskListProject extends Component {
     constructor() {
@@ -21,15 +22,15 @@ class TaskListProject extends Component {
 
     render() {
         return (
-            <div>
-                <Button ref={ref => this.openPopoverTarget = ref} onClick={() => this.toggleOpen()}>
+            <div className="task-list-project">
+                <div ref={ref => this.openPopoverTarget = ref} onClick={() => this.toggleOpen()}>
                     {this.renderProject()}
-                </Button>
+                </div>
                 <Overlay target={props => findDOMNode(this.openPopoverTarget)}
                          show={this.state.isOpen} placement="bottom" rootClose
                          onHide={() => this.toggleOpen(false)}>
                     <Popover id={this.id}>
-                        <FindProjectDialog onSelectProject={this.props.onProjectChanged}/>
+                        <FindProjectDialog onSelectProject={this.onProjectChanged}/>
                     </Popover>
                 </Overlay>
             </div>
@@ -39,12 +40,17 @@ class TaskListProject extends Component {
     renderProject() {
         if (this.props.project) {
             return (
-                <span>{this.props.project.title}</span>
+                <div className="task-list-project-inner">
+                    <Label style={{backgroundColor: this.props.project.color}}>
+                        {this.props.project.code}
+                    </Label>
+                    <span className="project-title">{this.props.project.title}</span>
+                </div>
             );
         }
         else {
             return (
-                <Glyphicon glyph="folder-close"/>
+                <div className="add-project-button"><Button><Glyphicon glyph="folder-close"/></Button></div>
             );
         }
     }
@@ -56,6 +62,11 @@ class TaskListProject extends Component {
         }
 
         this.setState({isOpen});
+    };
+
+    onProjectChanged = (project) => {
+        this.toggleOpen(false);
+        this.props.onProjectChanged(project);
     };
 }
 

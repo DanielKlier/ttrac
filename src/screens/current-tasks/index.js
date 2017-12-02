@@ -14,6 +14,7 @@ import {
 } from '../../actions/';
 import getCurrentTasks from '../../selectors/tasks/getCurrentTasks';
 import {identity} from 'lodash';
+import {setTaskProject} from '../../actions/index';
 
 export const CurrentTasks = props => (
     <div>
@@ -43,6 +44,9 @@ export const CurrentTasks = props => (
                                   onDeleteTaskClicked={() =>
                                       props.onDeleteTaskClicked(t.id)
                                   }
+                                  onProjectChanged={project =>
+                                      props.onTaskProjectChanged(t.id, project.id)
+                                  }
                     />
                 ))
             }
@@ -64,7 +68,8 @@ CurrentTasks.propTypes = {
     onTaskTitleChanged: PropTypes.func,
     onStartProgressClicked: PropTypes.func,
     onStopProgressClicked: PropTypes.func,
-    onDeleteTaskClicked: PropTypes.func
+    onDeleteTaskClicked: PropTypes.func,
+    onTaskProjectChanged: PropTypes.func
 };
 
 CurrentTasks.defaultProps = {
@@ -74,7 +79,8 @@ CurrentTasks.defaultProps = {
     onTaskTitleChanged: identity,
     onStartProgressClicked: identity,
     onStopProgressClicked: identity,
-    onDeleteTaskClicked: identity
+    onDeleteTaskClicked: identity,
+    onTaskProjectChanged: identity
 };
 
 export const mapStateToProps = (state) => ({
@@ -86,21 +92,23 @@ export const mapStateToProps = (state) => ({
 
         return {
             ...task,
+            project: state.app.projects.byId[task.projectId],
             elapsedTime
         };
     }),
-    runningTask : state.app.runningTask
+    runningTask: state.app.runningTask
 });
 
 export const mapDispatchToProps = dispatch => ({
-    onAddNewTaskClick     : () => dispatch(createNewTask()),
-    onTaskTitleChanged    : (taskId, text) => dispatch(
+    onAddNewTaskClick: () => dispatch(createNewTask()),
+    onTaskTitleChanged: (taskId, text) => dispatch(
         setTaskTitle(taskId, text)),
     onStartProgressClicked: (taskId) => dispatch(startTaskProgress(taskId, Date.now())),
-    onStopProgressClicked : (taskId, startDate) => dispatch(
+    onStopProgressClicked: (taskId, startDate) => dispatch(
         stopTaskProgress(taskId, startDate, Date.now())
     ),
-    onDeleteTaskClicked   : (taskId) => dispatch(deleteTask(taskId))
+    onDeleteTaskClicked: (taskId) => dispatch(deleteTask(taskId)),
+    onTaskProjectChanged: (taskId, projectId) => dispatch(setTaskProject(taskId, projectId))
 });
 
 export default connect(

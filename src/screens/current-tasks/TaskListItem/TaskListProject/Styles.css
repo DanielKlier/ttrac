@@ -1,0 +1,20 @@
+.task-list-project {
+    display: flex;
+}
+
+.task-list-project .project-title {
+    white-space: nowrap;
+}
+
+.task-list-project-inner {
+    display: flex;
+    align-items: center;
+}
+
+.task-list-project-inner .project-title {
+    padding-left: 6px;
+}
+
+.task-list-project .add-project-button .btn {
+    padding: 0 5px;
+}
