@@ -17,6 +17,7 @@ exports[`it behaves correctly 1`] = `
   onDeleteTaskClicked={[Function]}
   onStartProgressClicked={[Function]}
   onStopProgressClicked={[Function]}
+  onTaskProjectChanged={[Function]}
   onTaskTitleChanged={[Function]}
   runningTask={
     Object {
@@ -42,9 +43,11 @@ exports[`it behaves correctly 1`] = `
           jiraIssue=""
           key="1"
           onDeleteTaskClicked={[Function]}
+          onProjectChanged={[Function]}
           onStartProgressClicked={[Function]}
           onStopProgressClicked={[Function]}
           onTaskTitleChanged={[Function]}
+          project={null}
           runningTask={
             Object {
               "startDate": 1489078800000,
@@ -57,28 +60,6 @@ exports[`it behaves correctly 1`] = `
           <li
             className="list-group-item task-list-item running"
           >
-            <div
-              className="task-list-item-badges"
-            >
-              <TimeCounter
-                startDate={1489078800000}
-              >
-                <span
-                  className="task-list-hours"
-                >
-                  <Label
-                    bsClass="label"
-                    bsStyle="warning"
-                  >
-                    <span
-                      className="label label-warning"
-                    >
-                      0s
-                    </span>
-                  </Label>
-                </span>
-              </TimeCounter>
-            </div>
             <div
               className="task-list-item-main"
             >
@@ -119,6 +100,88 @@ exports[`it behaves correctly 1`] = `
                   </toggleDisplay>
                 </h4>
               </TaskListTitle>
+            </div>
+            <div
+              className="task-list-item-project"
+            >
+              <TaskListProject
+                onProjectChanged={[Function]}
+                project={null}
+              >
+                <div
+                  className="task-list-project"
+                >
+                  <div
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="add-project-button"
+                    >
+                      <Button
+                        active={false}
+                        block={false}
+                        bsClass="btn"
+                        bsStyle="default"
+                        disabled={false}
+                      >
+                        <button
+                          className="btn btn-default"
+                          disabled={false}
+                          type="button"
+                        >
+                          <Glyphicon
+                            bsClass="glyphicon"
+                            glyph="folder-close"
+                          >
+                            <span
+                              className="glyphicon glyphicon-folder-close"
+                            />
+                          </Glyphicon>
+                        </button>
+                      </Button>
+                    </div>
+                  </div>
+                  <Overlay
+                    animation={[Function]}
+                    onHide={[Function]}
+                    placement="bottom"
+                    rootClose={true}
+                    show={false}
+                    target={[Function]}
+                  >
+                    <Overlay
+                      onHide={[Function]}
+                      placement="bottom"
+                      rootClose={true}
+                      show={false}
+                      target={[Function]}
+                      transition={[Function]}
+                    />
+                  </Overlay>
+                </div>
+              </TaskListProject>
+            </div>
+            <div
+              className="task-list-item-badges"
+            >
+              <TimeCounter
+                startDate={1489078800000}
+              >
+                <span
+                  className="task-list-hours"
+                >
+                  <Label
+                    bsClass="label"
+                    bsStyle="warning"
+                  >
+                    <span
+                      className="label label-warning"
+                    >
+                      0s
+                    </span>
+                  </Label>
+                </span>
+              </TimeCounter>
             </div>
             <div
               className="task-list-item-buttons"
@@ -188,9 +251,11 @@ exports[`it behaves correctly 1`] = `
           jiraIssue=""
           key="2"
           onDeleteTaskClicked={[Function]}
+          onProjectChanged={[Function]}
           onStartProgressClicked={[Function]}
           onStopProgressClicked={[Function]}
           onTaskTitleChanged={[Function]}
+          project={null}
           runningTask={
             Object {
               "startDate": 1489078800000,
@@ -203,29 +268,6 @@ exports[`it behaves correctly 1`] = `
           <li
             className="list-group-item task-list-item"
           >
-            <div
-              className="task-list-item-badges"
-            >
-              <TaskListHours
-                className="pull-left"
-                elapsedTime={0}
-              >
-                <span
-                  className="task-list-hours"
-                >
-                  <Label
-                    bsClass="label"
-                    bsStyle="info"
-                  >
-                    <span
-                      className="label label-info"
-                    >
-                      0s
-                    </span>
-                  </Label>
-                </span>
-              </TaskListHours>
-            </div>
             <div
               className="task-list-item-main"
             >
@@ -266,6 +308,89 @@ exports[`it behaves correctly 1`] = `
                   </toggleDisplay>
                 </h4>
               </TaskListTitle>
+            </div>
+            <div
+              className="task-list-item-project"
+            >
+              <TaskListProject
+                onProjectChanged={[Function]}
+                project={null}
+              >
+                <div
+                  className="task-list-project"
+                >
+                  <div
+                    onClick={[Function]}
+                  >
+                    <div
+                      className="add-project-button"
+                    >
+                      <Button
+                        active={false}
+                        block={false}
+                        bsClass="btn"
+                        bsStyle="default"
+                        disabled={false}
+                      >
+                        <button
+                          className="btn btn-default"
+                          disabled={false}
+                          type="button"
+                        >
+                          <Glyphicon
+                            bsClass="glyphicon"
+                            glyph="folder-close"
+                          >
+                            <span
+                              className="glyphicon glyphicon-folder-close"
+                            />
+                          </Glyphicon>
+                        </button>
+                      </Button>
+                    </div>
+                  </div>
+                  <Overlay
+                    animation={[Function]}
+                    onHide={[Function]}
+                    placement="bottom"
+                    rootClose={true}
+                    show={false}
+                    target={[Function]}
+                  >
+                    <Overlay
+                      onHide={[Function]}
+                      placement="bottom"
+                      rootClose={true}
+                      show={false}
+                      target={[Function]}
+                      transition={[Function]}
+                    />
+                  </Overlay>
+                </div>
+              </TaskListProject>
+            </div>
+            <div
+              className="task-list-item-badges"
+            >
+              <TaskListHours
+                className="pull-left"
+                elapsedTime={0}
+              >
+                <span
+                  className="task-list-hours"
+                >
+                  <Label
+                    bsClass="label"
+                    bsStyle="info"
+                  >
+                    <span
+                      className="label label-info"
+                    >
+                      0s
+                    </span>
+                  </Label>
+                </span>
+              </TaskListHours>
             </div>
             <div
               className="task-list-item-buttons"

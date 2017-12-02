@@ -43,7 +43,7 @@ test('TaskListItem calls the handler if the start progress button is clicked', (
     const component = mount(<TaskListItem onStartProgressClicked={handler1}
                                           onStopProgressClicked={handler2}
                                           taskIsRunning={false}
-                                          runningTask={{}}
+                                          runningTask={{startDate: new Date('2017-03-09T18:00:00')}}
     />);
 
     component.find('StartProgressButton').simulate('click');

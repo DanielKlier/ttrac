@@ -1,8 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import TimeCounter from '../TimeCounter';
+import TimeCounter from './index';
 import {mount} from 'enzyme';
-import toJSON from 'enzyme-to-json';
 
 jest.useFakeTimers();
 

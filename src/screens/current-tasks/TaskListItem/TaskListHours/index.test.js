@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import TaskListHours from '../TaskListHours';
+import TaskListHours from './index';
 
 test('TaskListHours renders correctly', () => {
     const component = renderer.create(<TaskListHours/>);
@@ -8,6 +8,6 @@ test('TaskListHours renders correctly', () => {
 
     expect(tree).toMatchSnapshot();
 
-    const componentWithHours = renderer.create(<TaskListHours elapsedTime={3610000}/>)
+    const componentWithHours = renderer.create(<TaskListHours elapsedTime={3610000}/>);
     expect(componentWithHours.toJSON()).toMatchSnapshot();
 });

@@ -70,6 +70,9 @@ test('mapStateToProps', () => {
                 byId: {
                     1: {id: 1, stopDate: 2000, startDate: 0}
                 }
+            },
+            projects: {
+                byId: {}
             }
         }
     };

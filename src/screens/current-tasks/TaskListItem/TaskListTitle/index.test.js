@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import TaskListTitle from '../TaskListTitle';
+import TaskListTitle from './index';
 import {mount} from 'enzyme';
 import toJSON from 'enzyme-to-json';
 
