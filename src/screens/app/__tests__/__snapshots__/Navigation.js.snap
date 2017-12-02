@@ -89,6 +89,19 @@ exports[`it renders the Navigation 1`] = `
             About
           </a>
         </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="/testground"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+          >
+            Testground
+          </a>
+        </li>
       </ul>
     </div>
   </div>
