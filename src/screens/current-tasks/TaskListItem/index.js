@@ -5,8 +5,8 @@ import TaskListHours from './TaskListHours';
 import TaskListIssue from './TaskListIssue';
 import TaskListTitle from './TaskListTitle';
 import TimeCounter from './TimeCounter';
-import StartProgressButton from './StartProgressButton';
-import StopProgressButton from './StopProgressButton';
+import StartProgressButton from './buttons/StartProgressButton';
+import StopProgressButton from './buttons/StopProgressButton';
 import DeleteButton from '../../../components/DeleteButton';
 import TaskListProject from './TaskListProject';
 
@@ -54,6 +54,16 @@ class TaskListItem extends React.PureComponent {
 
         return (
             <li className={className}>
+                <div className="task-list-item-main">
+                    <TaskListTitle title={props.title}
+                                   onTextChanged={
+                                       text => props.onTaskTitleChanged(text)
+                                   }/>
+                </div>
+                <div className="task-list-item-project">
+                    <TaskListProject project={props.project}
+                                     onProjectChanged={props.onProjectChanged}/>
+                </div>
                 <div className="task-list-item-badges">
                     {props.taskIsRunning &&
                     <TimeCounter startDate={props.runningTask.startDate}/>
@@ -64,16 +74,6 @@ class TaskListItem extends React.PureComponent {
                     }
                     {props.jiraIssue &&
                     <TaskListIssue jiraIssue={props.jiraIssue}/>}
-                </div>
-                <div className="task-list-item-project">
-                    <TaskListProject project={props.project}
-                                     onProjectChanged={props.onProjectChanged}/>
-                </div>
-                <div className="task-list-item-main">
-                    <TaskListTitle title={props.title}
-                                   onTextChanged={
-                                       text => props.onTaskTitleChanged(text)
-                                   }/>
                 </div>
                 <div className="task-list-item-buttons">
                     <DeleteButton onClick={() => props.onDeleteTaskClicked()}/>

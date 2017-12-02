@@ -1,7 +1,8 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import {noop} from 'lodash';
-import ToggleDisplay from '../../../components/ToggleDisplay';
+import ToggleDisplay from '../../../../components/ToggleDisplay';
+import './Styles.css';
 
 export default class TaskListTitle extends React.Component {
     // noinspection JSUnusedGlobalSymbols

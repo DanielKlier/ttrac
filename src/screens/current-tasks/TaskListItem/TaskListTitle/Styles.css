@@ -1,0 +1,7 @@
+.task-list-description {
+    margin-bottom: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+}

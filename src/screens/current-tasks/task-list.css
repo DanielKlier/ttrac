@@ -15,30 +15,15 @@
     animation: 1s ease infinite alternate pulsating-border;
 }
 
-.task-list-hours {
-    font-size: 24px;
-}
-
-.task-list-issue {
-    display: block;
-}
-
 .task-list-item-main {
-    width: 100%;
+    max-width: 30%;
     padding-right: 10px;
     overflow-x: hidden;
 }
 
 .task-list-item-project {
-    padding: 9px 10px 0 10px
-}
-
-.task-list-description {
-    margin-bottom: 5px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 100%;
-    overflow: hidden;
+    padding: 9px 10px 0 10px;
+    margin-right: auto;
 }
 
 .task-list-item-badges {

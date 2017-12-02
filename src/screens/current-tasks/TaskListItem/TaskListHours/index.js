@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Label} from 'react-bootstrap';
 import moment from 'moment';
 import 'moment-duration-format';
+import './Styles.css';
 
 const TaskListHours = props => (
     <span className="task-list-hours">
