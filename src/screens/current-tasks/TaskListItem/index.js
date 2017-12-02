@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import {identity} from 'lodash';
+import {noop} from 'lodash';
 import TaskListHours from './TaskListHours';
 import TaskListIssue from './TaskListIssue';
 import TaskListTitle from './TaskListTitle';
@@ -8,6 +8,7 @@ import TimeCounter from './TimeCounter';
 import StartProgressButton from './StartProgressButton';
 import StopProgressButton from './StopProgressButton';
 import DeleteButton from '../../../components/DeleteButton';
+import TaskListProject from './TaskListProject';
 
 class TaskListItem extends React.PureComponent {
     // noinspection JSUnusedGlobalSymbols
@@ -20,7 +21,9 @@ class TaskListItem extends React.PureComponent {
         onTaskTitleChanged: PropTypes.func,
         onStartProgressClicked: PropTypes.func,
         onStopProgressClicked: PropTypes.func,
-        onDeleteTaskClicked: PropTypes.func
+        onDeleteTaskClicked: PropTypes.func,
+        project: PropTypes.object,
+        onProjectChanged: PropTypes.func
     };
 
     // noinspection JSUnusedGlobalSymbols
@@ -30,10 +33,12 @@ class TaskListItem extends React.PureComponent {
         title: '',
         taskIsRunning: false,
         runningTask: null,
-        onTaskTitleChanged: identity,
-        onStartProgressClicked: identity,
-        onStopProgressClicked: identity,
-        onDeleteTaskClicked: identity
+        onTaskTitleChanged: noop,
+        onStartProgressClicked: noop,
+        onStopProgressClicked: noop,
+        onDeleteTaskClicked: noop,
+        project: null,
+        onProjectChanged: noop
     };
 
     render() {
@@ -66,6 +71,7 @@ class TaskListItem extends React.PureComponent {
                                        text => props.onTaskTitleChanged(text)
                                    }/>
                 </div>
+                <TaskListProject project={props.project} onChange={props.onProjectChanged} />
                 <div className="task-list-item-buttons">
                     <DeleteButton onClick={() => props.onDeleteTaskClicked()}/>
                     {props.taskIsRunning === false &&

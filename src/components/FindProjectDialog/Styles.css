@@ -1,0 +1,16 @@
+.search-project .project-list {
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.search-project .project-list .find-project-list-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.search-project .project-list .find-project-list-item .color-button {
+    margin-right: 10px;
+    cursor: pointer;
+}
