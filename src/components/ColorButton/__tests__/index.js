@@ -2,7 +2,6 @@ import React from 'react';
 import {mount} from 'enzyme';
 import toJSON from 'enzyme-to-json';
 import ColorButton from '../index';
-import {Button} from 'react-bootstrap';
 
 const color = '#ffaaff';
 

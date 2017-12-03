@@ -1,0 +1,457 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it opens and renders the overlay when clicked 1`] = `
+<ColorPicker
+  colorPalette={
+    Array [
+      "#ff0000",
+      "#00ff00",
+      "#0000ff",
+      "#ffff00",
+      "#00ffff",
+      "#ff00ff",
+    ]
+  }
+  onChange={[Function]}
+  value="#ff0000"
+>
+  <div
+    className="color-picker"
+  >
+    <div
+      className="clearfix toggle-wrap"
+    >
+      <ColorButton
+        color="#ff0000"
+        disabled={false}
+        isSelected={false}
+        onClick={[Function]}
+      >
+        <div
+          className="color-button"
+        >
+          <Button
+            active={false}
+            block={false}
+            bsClass="btn"
+            bsStyle="default"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <button
+              className="btn btn-default"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              <div
+                className="color-tile"
+                style={
+                  Object {
+                    "backgroundColor": "#ff0000",
+                  }
+                }
+              />
+            </button>
+          </Button>
+        </div>
+      </ColorButton>
+    </div>
+    <Overlay
+      animation={[Function]}
+      onHide={[Function]}
+      placement="bottom"
+      rootClose={true}
+      show={true}
+      target={[Function]}
+    >
+      <Overlay
+        onHide={[Function]}
+        placement="bottom"
+        rootClose={true}
+        show={true}
+        target={[Function]}
+        transition={[Function]}
+      >
+        <Portal>
+          <RootCloseWrapper
+            event="click"
+            onRootClose={[Function]}
+          >
+            <Fade
+              in={true}
+              mountOnEnter={false}
+              onExited={[Function]}
+              timeout={300}
+              transitionAppear={true}
+              unmountOnExit={false}
+            >
+              <Transition
+                className="fade"
+                enteredClassName="in"
+                enteringClassName="in"
+                in={true}
+                mountOnEnter={false}
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                timeout={300}
+                transitionAppear={true}
+                unmountOnExit={false}
+              >
+                <Position
+                  className="fade in"
+                  containerPadding={0}
+                  placement="bottom"
+                  shouldUpdatePosition={false}
+                  target={[Function]}
+                >
+                  <Popover
+                    arrowOffsetLeft="NaN%"
+                    bsClass="popover"
+                    className="fade in color-picker-overlay"
+                    id="ColorPicker_2"
+                    placement="bottom"
+                    positionLeft={0}
+                    positionTop={0}
+                    style={
+                      Object {
+                        "left": 0,
+                        "top": 0,
+                      }
+                    }
+                  >
+                    <div
+                      className="fade in color-picker-overlay popover bottom"
+                      id="ColorPicker_2"
+                      role="tooltip"
+                      style={
+                        Object {
+                          "display": "block",
+                          "left": 0,
+                          "top": 0,
+                        }
+                      }
+                    >
+                      <div
+                        className="arrow"
+                        style={
+                          Object {
+                            "left": "NaN%",
+                            "top": undefined,
+                          }
+                        }
+                      />
+                      <div
+                        className="popover-content"
+                      >
+                        <ColorButton
+                          color="#ff0000"
+                          disabled={false}
+                          isSelected={true}
+                          key="0"
+                          onClick={[Function]}
+                        >
+                          <div
+                            className="color-button selected"
+                          >
+                            <Button
+                              active={false}
+                              block={false}
+                              bsClass="btn"
+                              bsStyle="default"
+                              disabled={false}
+                              onClick={[Function]}
+                            >
+                              <button
+                                className="btn btn-default"
+                                disabled={false}
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <div
+                                  className="color-tile"
+                                  style={
+                                    Object {
+                                      "backgroundColor": "#ff0000",
+                                    }
+                                  }
+                                />
+                              </button>
+                            </Button>
+                          </div>
+                        </ColorButton>
+                        <ColorButton
+                          color="#00ff00"
+                          disabled={false}
+                          isSelected={false}
+                          key="1"
+                          onClick={[Function]}
+                        >
+                          <div
+                            className="color-button"
+                          >
+                            <Button
+                              active={false}
+                              block={false}
+                              bsClass="btn"
+                              bsStyle="default"
+                              disabled={false}
+                              onClick={[Function]}
+                            >
+                              <button
+                                className="btn btn-default"
+                                disabled={false}
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <div
+                                  className="color-tile"
+                                  style={
+                                    Object {
+                                      "backgroundColor": "#00ff00",
+                                    }
+                                  }
+                                />
+                              </button>
+                            </Button>
+                          </div>
+                        </ColorButton>
+                        <ColorButton
+                          color="#0000ff"
+                          disabled={false}
+                          isSelected={false}
+                          key="2"
+                          onClick={[Function]}
+                        >
+                          <div
+                            className="color-button"
+                          >
+                            <Button
+                              active={false}
+                              block={false}
+                              bsClass="btn"
+                              bsStyle="default"
+                              disabled={false}
+                              onClick={[Function]}
+                            >
+                              <button
+                                className="btn btn-default"
+                                disabled={false}
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <div
+                                  className="color-tile"
+                                  style={
+                                    Object {
+                                      "backgroundColor": "#0000ff",
+                                    }
+                                  }
+                                />
+                              </button>
+                            </Button>
+                          </div>
+                        </ColorButton>
+                        <ColorButton
+                          color="#ffff00"
+                          disabled={false}
+                          isSelected={false}
+                          key="3"
+                          onClick={[Function]}
+                        >
+                          <div
+                            className="color-button"
+                          >
+                            <Button
+                              active={false}
+                              block={false}
+                              bsClass="btn"
+                              bsStyle="default"
+                              disabled={false}
+                              onClick={[Function]}
+                            >
+                              <button
+                                className="btn btn-default"
+                                disabled={false}
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <div
+                                  className="color-tile"
+                                  style={
+                                    Object {
+                                      "backgroundColor": "#ffff00",
+                                    }
+                                  }
+                                />
+                              </button>
+                            </Button>
+                          </div>
+                        </ColorButton>
+                        <ColorButton
+                          color="#00ffff"
+                          disabled={false}
+                          isSelected={false}
+                          key="4"
+                          onClick={[Function]}
+                        >
+                          <div
+                            className="color-button"
+                          >
+                            <Button
+                              active={false}
+                              block={false}
+                              bsClass="btn"
+                              bsStyle="default"
+                              disabled={false}
+                              onClick={[Function]}
+                            >
+                              <button
+                                className="btn btn-default"
+                                disabled={false}
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <div
+                                  className="color-tile"
+                                  style={
+                                    Object {
+                                      "backgroundColor": "#00ffff",
+                                    }
+                                  }
+                                />
+                              </button>
+                            </Button>
+                          </div>
+                        </ColorButton>
+                        <ColorButton
+                          color="#ff00ff"
+                          disabled={false}
+                          isSelected={false}
+                          key="5"
+                          onClick={[Function]}
+                        >
+                          <div
+                            className="color-button"
+                          >
+                            <Button
+                              active={false}
+                              block={false}
+                              bsClass="btn"
+                              bsStyle="default"
+                              disabled={false}
+                              onClick={[Function]}
+                            >
+                              <button
+                                className="btn btn-default"
+                                disabled={false}
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <div
+                                  className="color-tile"
+                                  style={
+                                    Object {
+                                      "backgroundColor": "#ff00ff",
+                                    }
+                                  }
+                                />
+                              </button>
+                            </Button>
+                          </div>
+                        </ColorButton>
+                      </div>
+                    </div>
+                  </Popover>
+                </Position>
+              </Transition>
+            </Fade>
+          </RootCloseWrapper>
+        </Portal>
+      </Overlay>
+    </Overlay>
+  </div>
+</ColorPicker>
+`;
+
+exports[`it renders just the color button when not expanded 1`] = `
+<ColorPicker
+  colorPalette={
+    Array [
+      "#ff0000",
+      "#00ff00",
+      "#0000ff",
+      "#ffff00",
+      "#00ffff",
+      "#ff00ff",
+    ]
+  }
+  onChange={[Function]}
+  value="#ff0000"
+>
+  <div
+    className="color-picker"
+  >
+    <div
+      className="clearfix toggle-wrap"
+    >
+      <ColorButton
+        color="#ff0000"
+        disabled={false}
+        isSelected={false}
+        onClick={[Function]}
+      >
+        <div
+          className="color-button"
+        >
+          <Button
+            active={false}
+            block={false}
+            bsClass="btn"
+            bsStyle="default"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <button
+              className="btn btn-default"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              <div
+                className="color-tile"
+                style={
+                  Object {
+                    "backgroundColor": "#ff0000",
+                  }
+                }
+              />
+            </button>
+          </Button>
+        </div>
+      </ColorButton>
+    </div>
+    <Overlay
+      animation={[Function]}
+      onHide={[Function]}
+      placement="bottom"
+      rootClose={true}
+      show={false}
+      target={[Function]}
+    >
+      <Overlay
+        onHide={[Function]}
+        placement="bottom"
+        rootClose={true}
+        show={false}
+        target={[Function]}
+        transition={[Function]}
+      />
+    </Overlay>
+  </div>
+</ColorPicker>
+`;
