@@ -67,5 +67,24 @@ it('allows a project\'s title to be changed', () => {
         },
         allIds: ['1'],
         deletedIds: []
-    })
+    });
+
+    expect(reducer({
+        byId: {
+            '1': {...project1}
+        },
+        allIds: ['1'],
+        deletedIds: []
+    }, {
+        type: SET_PROJECT_TITLE,
+        payload: {
+            id: '2', title: 'My Foo project'
+        }
+    })).toEqual({
+        byId: {
+            '1': {...project1, title: 'New Project 1'}
+        },
+        allIds: ['1'],
+        deletedIds: []
+    });
 });
