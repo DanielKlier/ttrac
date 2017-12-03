@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a color button normally 1`] = `
+<ColorButton
+  color="#ffaaff"
+  disabled={false}
+  isSelected={false}
+  onClick={[Function]}
+>
+  <div
+    className="color-button"
+  >
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="default"
+      disabled={false}
+      onClick={[Function]}
+    >
+      <button
+        className="btn btn-default"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        <div
+          className="color-tile"
+          style={
+            Object {
+              "backgroundColor": "#ffaaff",
+            }
+          }
+        />
+      </button>
+    </Button>
+  </div>
+</ColorButton>
+`;
+
+exports[`renders its selected state 1`] = `
+<ColorButton
+  color="#ffaaff"
+  disabled={false}
+  isSelected={true}
+  onClick={[Function]}
+>
+  <div
+    className="color-button selected"
+  >
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="default"
+      disabled={false}
+      onClick={[Function]}
+    >
+      <button
+        className="btn btn-default"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        <div
+          className="color-tile"
+          style={
+            Object {
+              "backgroundColor": "#ffaaff",
+            }
+          }
+        />
+      </button>
+    </Button>
+  </div>
+</ColorButton>
+`;
