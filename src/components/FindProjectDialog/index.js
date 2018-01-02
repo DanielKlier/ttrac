@@ -6,6 +6,8 @@ import SearchBox from './SearchBox';
 import {connect} from 'react-redux';
 import getProjects from '../../selectors/projects/getProjects';
 import './Styles.css';
+import {CreateProjectDialog} from '../CreateProjectDialog/index';
+import {Button} from 'react-bootstrap';
 
 class FindProjectDialog extends Component {
 
@@ -13,9 +15,9 @@ class FindProjectDialog extends Component {
         super();
 
         this.state = {
-            filter: ''
+            filter: '',
+            creatingNewProject: false
         };
-
     }
 
     render() {
@@ -36,12 +38,24 @@ class FindProjectDialog extends Component {
                         </li>
                     ))
                 }</ul>
-                <p>
-
-                </p>
+                <div>
+                    <p>Project not found?</p>
+                    <Button onClick={this.showCreateDialog} bsStyle="primary">Create new</Button>
+                    <CreateProjectDialog show={this.state.creatingNewProject}
+                                         onComplete={this.hideCreateDialog}
+                                         onCancel={this.hideCreateDialog}/>
+                </div>
             </div>
         );
     }
+
+    hideCreateDialog = () => {
+        this.setState({creatingNewProject: false});
+    };
+
+    showCreateDialog = () => {
+        this.setState({creatingNewProject: true});
+    };
 
     filterProjects = (projects) => {
         const filter = this.state.filter.toLowerCase();

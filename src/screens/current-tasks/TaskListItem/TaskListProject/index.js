@@ -27,7 +27,7 @@ class TaskListProject extends Component {
                     {this.renderProject()}
                 </div>
                 <Overlay target={props => findDOMNode(this.openPopoverTarget)}
-                         show={this.state.isOpen} placement="bottom" rootClose
+                         show={this.state.isOpen} placement="bottom"
                          onHide={() => this.toggleOpen(false)}>
                     <Popover id={this.id}>
                         <FindProjectDialog onSelectProject={this.onProjectChanged}/>

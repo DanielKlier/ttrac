@@ -33,14 +33,14 @@ function makeColors(numColors) {
     });
 }
 
-class CreateProjectDialog extends Component {
+export class CreateProjectDialog extends Component {
 
     constructor() {
         super();
 
         this.colorPalette = makeColors(64);
 
-        this.state = {
+        this.state = this.defaultState = {
             formValid: false,
             title: '',
             titleValid: false,
@@ -57,10 +57,7 @@ class CreateProjectDialog extends Component {
     }
 
     reset() {
-        this.setState({
-            title: '',
-            code: ''
-        });
+        this.setState(this.defaultState);
     }
 
     render() {
@@ -219,6 +216,7 @@ CreateProjectDialog.defaultProps = {
 };
 
 function mapStateToProps(state) {
+    console.log(state);
     return {
         existingProjects: getProjects(state)
     };
