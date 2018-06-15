@@ -104,14 +104,14 @@ exports[`TaskListItem renders correctly 1`] = `
             animation={[Function]}
             onHide={[Function]}
             placement="bottom"
-            rootClose={true}
+            rootClose={false}
             show={false}
             target={[Function]}
           >
             <Overlay
               onHide={[Function]}
               placement="bottom"
-              rootClose={true}
+              rootClose={false}
               show={false}
               target={[Function]}
               transition={[Function]}
@@ -231,7 +231,7 @@ exports[`TaskListItem renders correctly 2`] = `
   project={null}
   runningTask={
     Object {
-      "startDate": 2017-03-09T18:00:00.000Z,
+      "startDate": 2017-03-09T17:00:00.000Z,
     }
   }
   taskIsRunning={true}
@@ -327,14 +327,14 @@ exports[`TaskListItem renders correctly 2`] = `
             animation={[Function]}
             onHide={[Function]}
             placement="bottom"
-            rootClose={true}
+            rootClose={false}
             show={false}
             target={[Function]}
           >
             <Overlay
               onHide={[Function]}
               placement="bottom"
-              rootClose={true}
+              rootClose={false}
               show={false}
               target={[Function]}
               transition={[Function]}
@@ -347,7 +347,7 @@ exports[`TaskListItem renders correctly 2`] = `
       className="task-list-item-badges"
     >
       <TimeCounter
-        startDate={2017-03-09T18:00:00.000Z}
+        startDate={2017-03-09T17:00:00.000Z}
       >
         <span
           className="task-list-hours"

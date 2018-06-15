@@ -79,17 +79,17 @@ exports[`it opens and renders the overlay when clicked 1`] = `
             onRootClose={[Function]}
           >
             <Fade
+              appear={true}
               in={true}
               mountOnEnter={false}
               onExited={[Function]}
               timeout={300}
-              transitionAppear={true}
               unmountOnExit={false}
             >
               <Transition
-                className="fade"
-                enteredClassName="in"
-                enteringClassName="in"
+                appear={true}
+                enter={true}
+                exit={true}
                 in={true}
                 mountOnEnter={false}
                 onEnter={[Function]}
@@ -99,7 +99,6 @@ exports[`it opens and renders the overlay when clicked 1`] = `
                 onExited={[Function]}
                 onExiting={[Function]}
                 timeout={300}
-                transitionAppear={true}
                 unmountOnExit={false}
               >
                 <Position

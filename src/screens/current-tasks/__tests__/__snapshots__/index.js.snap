@@ -145,14 +145,14 @@ exports[`it behaves correctly 1`] = `
                     animation={[Function]}
                     onHide={[Function]}
                     placement="bottom"
-                    rootClose={true}
+                    rootClose={false}
                     show={false}
                     target={[Function]}
                   >
                     <Overlay
                       onHide={[Function]}
                       placement="bottom"
-                      rootClose={true}
+                      rootClose={false}
                       show={false}
                       target={[Function]}
                       transition={[Function]}
@@ -353,14 +353,14 @@ exports[`it behaves correctly 1`] = `
                     animation={[Function]}
                     onHide={[Function]}
                     placement="bottom"
-                    rootClose={true}
+                    rootClose={false}
                     show={false}
                     target={[Function]}
                   >
                     <Overlay
                       onHide={[Function]}
                       placement="bottom"
-                      rootClose={true}
+                      rootClose={false}
                       show={false}
                       target={[Function]}
                       transition={[Function]}

@@ -5,8 +5,8 @@
   "dependencies": {
     "color-convert": "^1.9.1",
     "history": "^4.6.3",
-    "lodash": "^4.17.4",
-    "moment": "^2.18.1",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
     "moment-duration-format": "^1.3.0",
     "prop-types": "^15.5.10",
     "react": "^16.1.1",
@@ -25,11 +25,11 @@
     "uuid": "^3.1.0"
   },
   "devDependencies": {
-    "enzyme": "^3.1.0",
-    "enzyme-adapter-react-16": "^1.1.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.1.0",
     "jest-localstorage-mock": "^2.0.1",
-    "react-scripts": "1.0.17",
+    "react-scripts": "^1.1.4",
     "redux-mock-store": "^1.3.0"
   },
   "scripts": {
